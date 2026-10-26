@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../PageHead.astro';
+import PodcastBand from '../PodcastBand.astro';
+import { ROUTES, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy(lang);
+const p = c.podcast;
+---
+<Base lang={lang} title={c.meta.podcast.title} description={c.meta.podcast.description} path={ROUTES.podcast[lang]} alternates={{ en: ROUTES.podcast.en, ko: ROUTES.podcast.ko }}>
+  <PodcastBand lang={lang} kicker={p.kicker} title={p.title} text={p.lede} linkToPage={false} />
+  <div class="wrap rows">
+    <section class="row">
+      <div class="row-label"><p class="kicker">{lang === 'ko' ? '어떤 쇼' : 'The show'}</p></div>
+      <div class="row-body prose-block"><p style="font-size:clamp(22px,2.2vw,28px);line-height:1.42">{p.about}</p>{p.inKorean && <span class="meta" style="display:block;margin-top:18px">{p.inKorean}</span>}</div>
+    </section>
+    <section class="row">
+      <div class="row-label"><p class="kicker">{p.hostsTitle}</p></div>
+      <div class="row-body"><div class="pillars" style="grid-template-columns:repeat(2,minmax(0,1fr))">{p.hosts.map((h) => <div class="pillar"><h3>{h.name}</h3><p>{h.text}</p></div>)}</div></div>
+    </section>
+  </div>
+</Base>

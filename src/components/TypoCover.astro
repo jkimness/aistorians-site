@@ -1,0 +1,18 @@
+---
+// Drawn cover for essays without a lead image: brand navy, coral chapter number, halftone corner.
+interface Props { n?: number; tag?: string; seed?: string }
+const { n, tag = 'ai storians', seed = 'x' } = Astro.props;
+let h = 0; for (const c of seed) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+const cx = 10 + (h % 7), cy = 1 + ((h >> 3) % 4);
+const dots: { x: number; y: number; r: number }[] = [];
+for (let y = 0; y < 9; y++) for (let x = 0; x < 14; x++) {
+  const d = Math.hypot(x - cx, (y - cy) * 1.15);
+  const r = Math.max(0, 0.46 - d * 0.045);
+  if (r > 0.05) dots.push({ x: x + 0.5, y: y + 0.5, r });
+}
+---
+<div class="tcover" aria-hidden="true">
+  <span class="tag">{tag}</span>
+  <svg class="dots" viewBox="0 0 14 9">{dots.map((d) => <circle cx={d.x} cy={d.y} r={d.r} fill="#ec8a6c" />)}</svg>
+  <span class="num">{n != null ? String(n).padStart(2, '0') : '§'}</span>
+</div>

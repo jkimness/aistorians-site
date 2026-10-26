@@ -1,0 +1,16 @@
+---
+import { copy } from '../i18n/copy';
+import { ROUTES, type Lang } from '../i18n';
+interface Props { lang: Lang; title?: string; text?: string; button?: string }
+const { lang } = Astro.props;
+const h = copy(lang).home;
+---
+<section class="final section">
+  <div class="wrap grid">
+    <h2>{Astro.props.title ?? h.finalTitle}</h2>
+    <div class="side">
+      <p>{Astro.props.text ?? h.finalText}</p>
+      <a class="btn" href={ROUTES.contact[lang]}>{Astro.props.button ?? h.finalButton}</a>
+    </div>
+  </div>
+</section>

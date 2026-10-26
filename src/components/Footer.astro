@@ -1,0 +1,51 @@
+---
+import Wordmark from './Wordmark.astro';
+import { UI, ROUTES, NAV, type Lang } from '../i18n';
+import { LINKS, SITE } from '../site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = UI[lang];
+const elsewhere = [
+  { name: 'Substack', href: LINKS.substack },
+  { name: lang === 'ko' ? '브런치' : 'Brunch', href: LINKS.brunch },
+  { name: 'Threads', href: LINKS.threads },
+  { name: 'Instagram', href: LINKS.instagram },
+  { name: 'X', href: LINKS.x },
+  { name: 'FIRE사이드챗', href: LINKS.youtube },
+  { name: lang === 'ko' ? '모건 레터' : 'Morgan Letter', href: LINKS.morganLetter },
+];
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <Wordmark href={ROUTES.home[lang]} />
+        <p>{t.footerTagline}</p>
+      </div>
+      <div class="footer-col">
+        <h4>{t.sections}</h4>
+        <ul>
+          {NAV.map((k) => <li><a href={ROUTES[k][lang]}>{t.nav[k]}</a></li>)}
+          <li><a href={ROUTES.thoughts[lang]}>{t.nav.thoughts}</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{t.elsewhere}</h4>
+        <ul>
+          {elsewhere.map((x) => <li><a href={x.href} rel="me noopener" target="_blank">{x.name}</a></li>)}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{t.nav.contact}</h4>
+        <ul>
+          <li><a href={ROUTES.contact[lang]}>{t.book}</a></li>
+          <li><a class="footer-mail" href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>{t.copyright}</span>
+      <span>{t.colophon}</span>
+    </div>
+  </div>
+</footer>

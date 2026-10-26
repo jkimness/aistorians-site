@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../PageHead.astro';
+import FinalCta from '../FinalCta.astro';
+import Hedcut from '../Hedcut.astro';
+import { Image } from 'astro:assets';
+import stage from '../../assets/jae-stage.jpg';
+import { ROUTES, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy(lang);
+const s = c.speaking;
+---
+<Base lang={lang} title={c.meta.speaking.title} description={c.meta.speaking.description} path={ROUTES.speaking[lang]} alternates={{ en: ROUTES.speaking.en, ko: ROUTES.speaking.ko }}>
+  <PageHead kicker={s.kicker} title={s.title} lede={s.lede} />
+  <figure class="photo wrap" style="margin-top:clamp(28px,4vw,48px)">
+    <Image src={stage} alt={s.photoAlt} widths={[640, 1024, 1440, 2048]} sizes="(max-width: 1300px) 100vw, 1240px" loading="eager" />
+  </figure>
+  <div class="wrap rows">
+    <section class="row">
+      <div class="row-label"><p class="kicker">{s.talksTitle}</p></div>
+      <div class="row-body talks">
+        {s.talks.map((k) => (
+          <div class="talk">
+            <span class="n">{String(k.n).padStart(2, '0')}</span>
+            <div>
+              <h3>{k.title}</h3>
+              <p>{k.text}</p>
+              <div class="who"><span class="meta">{s.forLabel}</span><span class="label">{k.who}</span></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section class="row">
+      <div class="row-label"><p class="kicker">{s.formatsTitle}</p></div>
+      <div class="row-body"><ul class="formats">{s.formats.map((f) => <li>{f}</li>)}</ul></div>
+    </section>
+    <section class="row">
+      <div class="row-label"><p class="kicker">{s.bioTitle}</p></div>
+      <div class="row-body" style="display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:var(--gap);align-items:start">
+        <div class="prose-block"><p>{s.bio}</p></div>
+        <Hedcut alt="" />
+      </div>
+    </section>
+    <section class="row">
+      <div class="row-label"><p class="kicker">{s.faqTitle}</p></div>
+      <div class="row-body"><dl class="faq">{s.faq.map((f) => <div><dt>{f.q}</dt><dd>{f.a}</dd></div>)}</dl></div>
+    </section>
+  </div>
+  <FinalCta lang={lang} />
+</Base>

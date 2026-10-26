@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/essay.css';
+import { render } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import TypoCover from '../TypoCover.astro';
+import Newsletter from '../Newsletter.astro';
+import { UI, ROUTES, essayPath, otherLang, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+import { slugOf, pairOf, season, readingMinutes, type Essay } from '../../lib/essays';
+import { SITE } from '../../site';
+
+interface Props { e: Essay; lang: Lang }
+const { e, lang } = Astro.props;
+const t = UI[lang];
+const d = e.data;
+const slug = slugOf(e);
+const { Content } = await render(e);
+const pair = await pairOf(e);
+const path = essayPath(lang, slug);
+const alternates: Partial<Record<Lang, string>> = { [lang]: path };
+if (pair) alternates[otherLang(lang)] = essayPath(otherLang(lang), slug);
+const mins = readingMinutes(e.body, lang);
+const seriesLabel = d.series === 's1' ? t.seriesS1 : d.series === 'investing' ? t.seriesInvesting : t.standalone;
+const chapterLabel = d.chapter && d.series !== 'standalone' ? t.chapter(d.chapter) : null;
+let prev: Essay | undefined, next: Essay | undefined;
+if (d.series !== 'standalone') {
+  const list = await season(lang, d.series as 's1' | 'investing');
+  const i = list.findIndex((x) => slugOf(x) === slug);
+  prev = list[i - 1]; next = list[i + 1];
+}
+const bio = copy(lang).speaking.bio;
+const og = d.cover ? (await getImage({ src: d.cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' })).src : '/og-default.png';
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.deck,
+  datePublished: d.date.toISOString(), inLanguage: lang, mainEntityOfPage: SITE.url + path,
+  author: { '@type': 'Person', name: 'Jae Kim', alternateName: '제이킴모건', url: SITE.url + ROUTES.about.en },
+  publisher: { '@type': 'Organization', name: 'ai storians', url: SITE.url },
+};
+---
+<Base lang={lang} title={`${d.title} | ai storians`} description={d.deck || d.title} path={path} alternates={alternates} type="article" image={og} jsonLd={jsonLd}>
+  <div class="progress" aria-hidden="true"></div>
+  <article class="article">
+    <header class="article-head">
+      <div class="kicker meta-row">
+        <a href={ROUTES.writing[lang]}>{seriesLabel}</a>
+        {chapterLabel && <span>{chapterLabel}</span>}
+      </div>
+      <h1 class="article-title">{d.title}</h1>
+      {d.deck && <p class="article-deck">{d.deck}</p>}
+      <div class="byline">
+        <img src="/jae-hedcut-avatar.webp" alt="" width="48" height="48" />
+        <div>
+          <div class="who">{t.by} <a href={ROUTES.about[lang]}>{t.author}</a></div>
+          <div class="meta meta-row"><time datetime={d.date.toISOString()}>{t.dateFmt(d.date)}</time><span>{t.minRead(mins)}</span></div>
+        </div>
+        {pair && <a class="pair" href={essayPath(otherLang(lang), slug)} hreflang={otherLang(lang)} lang={otherLang(lang)}>{t.readOther}</a>}
+      </div>
+    </header>
+
+    <figure class="article-lead">
+      {d.cover
+        ? <Image src={d.cover} alt={d.coverAlt} widths={[640, 1024, 1440, 1920]} sizes="(max-width: 1100px) 100vw, 1024px" loading="eager" fetchpriority="high" />
+        : <TypoCover n={d.chapter} seed={slug} tag={seriesLabel} />}
+    </figure>
+
+    <div class="prose" lang={lang}>
+      <Content />
+    </div>
+    <div class="endmark" aria-hidden="true"><span></span></div>
+
+    <footer class="article-end">
+      {(prev || next) && (
+        <nav class="chapter-nav" aria-label={seriesLabel}>
+          {prev ? <a href={essayPath(lang, slugOf(prev))}><span class="meta">← {t.prev}{prev.data.chapter ? `, ${t.chapter(prev.data.chapter)}` : ''}</span><span class="t">{prev.data.title}</span></a> : <span></span>}
+          {next ? <a class="next" href={essayPath(lang, slugOf(next))}><span class="meta">{t.next}{next.data.chapter ? `, ${t.chapter(next.data.chapter)}` : ''} →</span><span class="t">{next.data.title}</span></a> : <span class="empty"></span>}
+        </nav>
+      )}
+      <div class="author-box">
+        <img src="/jae-hedcut-avatar.webp" alt="" width="88" height="88" loading="lazy" />
+        <div>
+          <div class="name">{t.author}</div>
+          <p>{bio}</p>
+          <div class="links">
+            <a class="arrow-link" href={ROUTES.contact[lang]}>{copy(lang).speaking.cta}</a>
+            <a class="arrow-link" href={ROUTES.about[lang]}>{t.nav.about}</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+  <Newsletter lang={lang} />
+</Base>

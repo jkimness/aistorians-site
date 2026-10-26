@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../PageHead.astro';
+import SeasonIndex from '../SeasonIndex.astro';
+import Story from '../Story.astro';
+import Newsletter from '../Newsletter.astro';
+import { UI, ROUTES, thoughtPath, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+import { essays, season } from '../../lib/essays';
+import { getCollection } from 'astro:content';
+import { LINKS } from '../../site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = UI[lang];
+const c = copy(lang);
+const w = c.writing;
+const s1 = await season(lang, 's1');
+const inv = await season(lang, 'investing');
+const beyond = (await essays(lang)).filter((e) => e.data.series === 'standalone');
+const thoughts = lang === 'en' ? (await getCollection('thoughts', (x) => !x.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()) : [];
+---
+<Base lang={lang} title={c.meta.writing.title} description={c.meta.writing.description} path={ROUTES.writing[lang]} alternates={{ en: ROUTES.writing.en, ko: ROUTES.writing.ko }}>
+  <PageHead kicker={w.kicker} title={w.title} lede={w.lede} />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">{c.home.season}</h2>
+        <p class="meta">{c.home.seasonSub}</p>
+      </div>
+      <SeasonIndex list={s1} lang={lang} />
+    </div>
+  </section>
+
+  {inv.length > 0 && (
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head section-head--flush">
+          <h2 class="section-title">{w.koreanOnly}</h2>
+          <a class="arrow-link" href={LINKS.brunchbookInvesting} target="_blank" rel="noopener">{lang === 'ko' ? '브런치북' : 'Brunch'}</a>
+        </div>
+        <p class="series-desc">{w.koreanOnlySub}</p>
+        <SeasonIndex list={inv} lang={lang} />
+      </div>
+    </section>
+  )}
+
+  {(beyond.length > 0 || thoughts.length > 0) && (
+    <section class="section latest" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="section-title">{w.beyond}</h2>
+        </div>
+        <div class="cols">
+          {beyond.map((e) => <Story e={e} lang={lang} />)}
+          {thoughts.map((x) => (
+            <a class="story" href={thoughtPath(x.id.split('/').pop()!)}>
+              <div class="meta meta-row"><span>{t.thoughtsTitle}</span><time datetime={x.data.date.toISOString()}>{t.dateFmt(x.data.date)}</time></div>
+              <h3>{x.data.title}</h3>
+              {x.data.deck && <p class="deck">{x.data.deck}</p>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  <Newsletter lang={lang} />
+</Base>

@@ -1,0 +1,70 @@
+---
+import Wordmark from './Wordmark.astro';
+import { UI, ROUTES, NAV, otherLang, type Lang } from '../i18n';
+
+interface Props { lang: Lang; path: string; alternates: Partial<Record<Lang, string>>; variant: 'front' | 'compact' }
+const { lang, path, alternates, variant } = Astro.props;
+const t = UI[lang];
+const other = otherLang(lang);
+const home = ROUTES.home[lang];
+const otherHref = alternates[other] ?? ROUTES.home[other];
+const isCurrent = (key: keyof typeof ROUTES) => {
+  const r = ROUTES[key][lang];
+  return path === r || (r !== '/' && path.startsWith(r + '/')) || (key === 'writing' && lang === 'en' && path.startsWith('/daily-thought'));
+};
+const langLinks = lang === 'en'
+  ? [{ l: 'en', label: 'English', href: path, cur: true }, { l: 'ko', label: '한국어', href: otherHref, cur: false }]
+  : [{ l: 'en', label: 'English', href: otherHref, cur: false }, { l: 'ko', label: '한국어', href: path, cur: true }];
+---
+{variant === 'front' && (
+  <div class="front-top">
+    <div class="wrap topbar">
+      <span class="ear">{t.est}</span>
+      <span class="ear ear-motto" aria-hidden="true"></span>
+      <nav class="langs" aria-label="Language">
+        {langLinks.map((x) => x.cur
+          ? <span aria-current="true" lang={x.l}>{x.label}</span>
+          : <a href={x.href} lang={x.l} hreflang={x.l}>{x.label}</a>)}
+      </nav>
+    </div>
+    <div class="wrap"><hr class="hair" /></div>
+    <div class="wrap nameplate">
+      <Wordmark href={home} />
+      <p class="motto">{t.motto}</p>
+    </div>
+    <div class="wrap"><hr class="rule-double" /></div>
+  </div>
+)}
+<header class:list={['navbar', variant === 'front' && 'navbar--front']}>
+  <div class="wrap">
+    <Wordmark href={home} class={variant === 'front' ? 'navbar-mark is-front' : 'navbar-mark'} />
+    <nav class="nav-links" aria-label={t.sections}>
+      {NAV.map((key) => (
+        <a href={ROUTES[key][lang]} aria-current={isCurrent(key) ? 'page' : undefined}>{t.nav[key]}</a>
+      ))}
+    </nav>
+    <div class="nav-end">
+      <nav class="langs" aria-label="Language">
+        {langLinks.map((x) => x.cur
+          ? <span aria-current="true" lang={x.l}>{x.l === 'en' ? 'EN' : 'KR'}</span>
+          : <a href={x.href} lang={x.l} hreflang={x.l}>{x.l === 'en' ? 'EN' : 'KR'}</a>)}
+      </nav>
+      <a class="btn btn--sm" href={ROUTES.contact[lang]}>{t.book}</a>
+      <details class="menu">
+        <summary><span>{t.menu}</span><span class="bars" aria-hidden="true"></span></summary>
+        <div class="menu-panel">
+          <a class="mlink" href={home}>{t.nav.home}</a>
+          {NAV.map((key) => <a class="mlink" href={ROUTES[key][lang]}>{t.nav[key]}</a>)}
+          <div class="menu-foot">
+            <nav class="langs" aria-label="Language">
+              {langLinks.map((x) => x.cur
+                ? <span aria-current="true" lang={x.l}>{x.label}</span>
+                : <a href={x.href} lang={x.l} hreflang={x.l}>{x.label}</a>)}
+            </nav>
+            <a class="btn btn--sm" href={ROUTES.contact[lang]}>{t.book}</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { UI, ROUTES } from '../i18n';
+const en = UI.en, ko = UI.ko;
+---
+<Base lang="en" title="Page not found | ai storians" description={en.notFoundBody} path="/404" noindex>
+  <section class="section">
+    <div class="wrap grid">
+      <div style="grid-column:1 / span 7">
+        <p class="kicker">404</p>
+        <h1 class="page-title" style="font-size:clamp(44px,6vw,84px)">{en.notFoundTitle}</h1>
+        <p class="page-lede" style="margin-top:22px">{en.notFoundBody}</p>
+        <p style="margin-top:30px"><a class="arrow-link" href={ROUTES.home.en}>{en.goHome}</a></p>
+      </div>
+      <div lang="ko" style="grid-column:8 / span 5;align-self:end;border-left:1px solid var(--hair);padding-left:var(--gap)">
+        <p class="page-lede" style="font-weight:700">{ko.notFoundTitle}</p>
+        <p class="page-lede" style="margin-top:8px">{ko.notFoundBody}</p>
+        <p style="margin-top:22px"><a class="arrow-link" href={ROUTES.home.ko}>{ko.goHome}</a></p>
+      </div>
+    </div>
+  </section>
+</Base>

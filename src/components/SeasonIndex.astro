@@ -1,0 +1,19 @@
+---
+import { UI, essayPath, type Lang } from '../i18n';
+import { slugOf, type Essay } from '../lib/essays';
+interface Props { list: Essay[]; lang: Lang; showDeck?: boolean }
+const { list, lang, showDeck = true } = Astro.props;
+const t = UI[lang];
+---
+<ol class="index">
+  {list.map((e) => (
+    <li>
+      <a href={essayPath(lang, slugOf(e))}>
+        <span class="n">{String(e.data.chapter ?? '').padStart(2, '0')}</span>
+        <span class="t">{e.data.title}</span>
+        {showDeck ? <span class="d">{e.data.deck}</span> : <span class="d"></span>}
+        <time class="meta date" datetime={e.data.date.toISOString()}>{t.dateFmt(e.data.date)}</time>
+      </a>
+    </li>
+  ))}
+</ol>

@@ -1,0 +1,18 @@
+---
+import { LINKS } from '../site';
+import { copy } from '../i18n/copy';
+import type { Lang } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const n = copy(lang).newsletter;
+---
+<section class="section letter">
+  <div class="wrap">
+    <p class="kicker">{lang === 'ko' ? '뉴스레터' : 'The letter'}</p>
+    <p class="letter-lines" style="margin-top:18px">{n.lines.map((l) => <span>{l}</span>)}</p>
+    <div class="letter-foot">
+      <a class="btn" href={LINKS.substack} target="_blank" rel="noopener">{n.button}</a>
+      <p>{n.sub}</p>
+    </div>
+  </div>
+</section>

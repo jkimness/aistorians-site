@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../site';
+import { UI, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** this page's path, e.g. /ai-storians/press-record */
+  path: string;
+  /** same page in each language, when it exists */
+  alternates?: Partial<Record<Lang, string>>;
+  variant?: 'front' | 'compact';
+  image?: string;
+  type?: 'website' | 'article';
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+const { lang, title, description, path, alternates = {}, variant = 'compact', image = '/og-default.png', type = 'website', jsonLd, noindex = false } = Astro.props;
+const t = UI[lang];
+const canonical = new URL(path, SITE.url).href.replace(/\/$/, path === '/' ? '/' : '');
+const abs = (p: string) => new URL(p, SITE.url).href;
+const alts = Object.entries(alternates) as [Lang, string][];
+---
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alts.map(([l, p]) => <link rel="alternate" hreflang={l} href={abs(p)} />)}
+    {alternates.en && <link rel="alternate" hreflang="x-default" href={abs(alternates.en)} />}
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#fcfcfa" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="ai storians" href={lang === 'ko' ? '/ko/rss.xml' : '/rss.xml'} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="ai storians" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={abs(image)} />
+    <meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <Header lang={lang} path={path} alternates={alternates} variant={variant} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

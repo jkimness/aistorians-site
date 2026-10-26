@@ -1,0 +1,6 @@
+---
+interface Props { href?: string; class?: string; tag?: 'a' | 'span' }
+const { href = '/', class: cls = '', tag = 'a' } = Astro.props;
+const Tag = tag;
+---
+<Tag class:list={['wordmark', cls]} href={tag === 'a' ? href : undefined} aria-label={tag === 'a' ? 'ai storians, home' : undefined}><span class="ai">ai</span> storians</Tag>

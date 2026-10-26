@@ -1,0 +1,9 @@
+---
+import EssayPage from '../../components/pages/EssayPage.astro';
+import { essays, slugOf } from '../../lib/essays';
+export async function getStaticPaths() {
+  return (await essays('en')).map((e) => ({ params: { slug: slugOf(e) }, props: { e } }));
+}
+const { e } = Astro.props;
+---
+<EssayPage e={e} lang="en" />

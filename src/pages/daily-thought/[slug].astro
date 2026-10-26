@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/essay.css';
+import Newsletter from '../../components/Newsletter.astro';
+import { getCollection, render } from 'astro:content';
+import { UI, ROUTES, thoughtPath } from '../../i18n';
+import { readingMinutes } from '../../lib/essays';
+export async function getStaticPaths() {
+  const list = await getCollection('thoughts', (x) => !x.data.draft);
+  return list.map((x) => ({ params: { slug: x.id.split('/').pop() }, props: { x } }));
+}
+const { x } = Astro.props;
+const t = UI.en;
+const { Content } = await render(x);
+const path = thoughtPath(x.id.split('/').pop()!);
+---
+<Base lang="en" title={`${x.data.title} | ai storians`} description={x.data.deck || x.data.title} path={path} alternates={{ en: path }} type="article">
+  <div class="progress" aria-hidden="true"></div>
+  <article class="article">
+    <header class="article-head">
+      <div class="kicker meta-row"><a href={ROUTES.thoughts.en}>{t.thoughtsTitle}</a></div>
+      <h1 class="article-title">{x.data.title}</h1>
+      {x.data.deck && <p class="article-deck">{x.data.deck}</p>}
+      <div class="byline">
+        <img src="/jae-hedcut-avatar.webp" alt="" width="48" height="48" />
+        <div>
+          <div class="who">{t.by} <a href={ROUTES.about.en}>{t.author}</a></div>
+          <div class="meta meta-row"><time datetime={x.data.date.toISOString()}>{t.dateFmt(x.data.date)}</time><span>{t.minRead(readingMinutes(x.body, 'en'))}</span></div>
+        </div>
+      </div>
+    </header>
+    <div class="prose" lang="en"><Content /></div>
+    <div class="endmark" aria-hidden="true"><span></span></div>
+  </article>
+  <Newsletter lang="en" />
+</Base>

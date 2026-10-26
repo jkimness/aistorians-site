@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hedcut from '../Hedcut.astro';
+import Story from '../Story.astro';
+import SeasonIndex from '../SeasonIndex.astro';
+import PodcastBand from '../PodcastBand.astro';
+import Newsletter from '../Newsletter.astro';
+import FinalCta from '../FinalCta.astro';
+import { UI, ROUTES, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+import { essays, season } from '../../lib/essays';
+import { SITE, LINKS } from '../../site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = UI[lang];
+const c = copy(lang);
+const h = c.home;
+const latest = (await essays(lang)).slice(0, 3);
+const s1 = await season(lang, 's1');
+const serviceHref: Record<string, string> = { speaking: ROUTES.speaking[lang], advisory: ROUTES.advisory[lang], writing: ROUTES.writing[lang] };
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: 'ai storians', alternateName: ['aistorians', '에이스토리언즈'], url: SITE.url, inLanguage: lang },
+  { '@context': 'https://schema.org', '@type': 'Person', name: 'Jae Kim', alternateName: '제이킴모건', url: SITE.url + ROUTES.about.en, jobTitle: 'Writer and speaker', sameAs: [LINKS.substack, LINKS.brunch, LINKS.threads, LINKS.instagram, LINKS.x] },
+];
+---
+<Base lang={lang} title={c.meta.home.title} description={c.meta.home.description} path={ROUTES.home[lang]} alternates={{ en: ROUTES.home.en, ko: ROUTES.home.ko }} variant="front" jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap grid">
+      <div class="hero-text">
+        <p class="kicker">{h.kicker}</p>
+        <h1 class="hero-headline">{h.headline}</h1>
+        <p class="hero-sub">{h.sub}</p>
+        <div class="hero-actions">
+          <a class="btn" href={ROUTES.contact[lang]}>{h.primary}</a>
+          <a class="arrow-link" href={ROUTES.writing[lang]}>{h.secondary}</a>
+        </div>
+      </div>
+      <figure class="hero-portrait">
+        <Hedcut eager alt={lang === 'ko' ? '제이킴모건 점묘 초상' : 'Jae Kim, stipple portrait'} />
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-label={lang === 'ko' ? '이력' : 'Credentials'}>
+    <div class="wrap">
+      <ul>
+        {h.proof.map((p) => <li><span class="kicker kicker--ink">{p.label}</span><span class="t">{p.text}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section latest">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">{t.latest}</h2>
+        <a class="arrow-link" href={ROUTES.writing[lang]}>{t.allEssays}</a>
+      </div>
+      <div class="cols">
+        {latest.map((e) => <Story e={e} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">{h.whatIDo}</h2>
+      </div>
+      <div class="services">
+        {h.services.map((s, i) => (
+          <div class="service">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.soon ? s.title : <a href={serviceHref[s.key]}>{s.title}</a>}</h3>
+            <p>{s.text}</p>
+            {s.soon ? <span class="soon">{s.soon}</span> : <a class="arrow-link" href={serviceHref[s.key]}>{s.link}</a>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">{h.season}</h2>
+        <p class="meta">{h.seasonSub}</p>
+      </div>
+      <SeasonIndex list={s1} lang={lang} />
+    </div>
+  </section>
+
+  <PodcastBand lang={lang} />
+  <Newsletter lang={lang} />
+  <FinalCta lang={lang} />
+</Base>

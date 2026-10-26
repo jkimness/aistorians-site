@@ -1,0 +1,95 @@
+/* The essay page: the crown jewel. A calm column, broadsheet details. */
+
+.progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .progress { display: block; position: fixed; inset: 0 0 auto 0; height: 3px; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); animation: read-progress linear both; animation-timeline: scroll(root); z-index: 60; }
+  @keyframes read-progress { to { transform: scaleX(1); } }
+}
+
+.article { --col: 41rem; }
+.article-head { max-width: calc(var(--col) + 2 * var(--pad)); margin-inline: auto; padding: clamp(36px, 6vw, 72px) var(--pad) 0; }
+.article-head .meta-row { color: var(--accent); }
+.article-title { font: 600 clamp(38px, 5.4vw, 66px)/1.02 var(--serif); letter-spacing: -0.03em; margin-top: 18px; font-variation-settings: 'opsz' 72; }
+:lang(ko) .article-title { font-weight: 700; line-height: 1.22; letter-spacing: -0.035em; font-size: clamp(32px, 4.6vw, 54px); }
+.article-deck { font: italic 400 clamp(20px, 2.1vw, 25px)/1.4 var(--serif); color: var(--ink-2); margin-top: 20px; }
+:lang(ko) .article-deck { font-style: normal; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.7; }
+
+.byline { display: flex; align-items: center; gap: 14px; margin-top: 30px; padding-block: 14px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--hair); }
+.byline img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex: none; background: var(--paper-2); }
+.byline .who { font: 600 15px/1.2 var(--sans); }
+.byline .meta-row { margin-top: 5px; color: var(--ink-3); }
+.byline .pair { margin-left: auto; font: 600 14px/1.2 var(--sans); white-space: nowrap; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+.byline .pair:hover { color: var(--accent); }
+
+.article-lead { max-width: calc(64rem + 2 * var(--pad)); margin: clamp(28px, 4vw, 48px) auto 0; padding-inline: var(--pad); }
+.article-lead img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 32%; }
+.article-lead .tcover { aspect-ratio: 21 / 9; }
+.article-lead .tcover .num { font-size: clamp(110px, 18vw, 240px); }
+
+.prose { max-width: calc(var(--col) + 2 * var(--pad)); margin-inline: auto; padding: clamp(36px, 5vw, 56px) var(--pad) 0; font: 400 20px/1.66 var(--serif); color: var(--ink); }
+.prose > * + * { margin-top: 1.05em; }
+:lang(ko) .prose { font-size: 18.5px; line-height: 1.95; letter-spacing: -0.003em; }
+:lang(ko) .prose > * + * { margin-top: 1.25em; }
+
+/* drop cap on the opening paragraph (Latin only) */
+.prose:lang(en) > p:first-child::first-letter {
+  float: left; font-weight: 600; font-size: 4.25em; line-height: 0.82; margin: 0.06em 0.09em 0 -0.02em; color: var(--ink); font-variation-settings: 'opsz' 72;
+}
+
+.prose h2 { font: 700 clamp(23px, 2.3vw, 28px)/1.25 var(--serif); letter-spacing: -0.015em; margin-top: 2.1em; padding-top: 22px; position: relative; }
+.prose h2::before { content: ''; position: absolute; top: 0; left: 0; width: 36px; height: 3px; background: var(--accent); }
+:lang(ko) .prose h2 { font-size: clamp(21px, 2.1vw, 25px); line-height: 1.45; letter-spacing: -0.03em; }
+.prose h3 { font: 700 21px/1.3 var(--serif); margin-top: 1.8em; }
+.prose h2 + *, .prose h3 + * { margin-top: 0.8em; }
+
+.prose a { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.prose a:hover { color: var(--accent); }
+.prose strong { font-weight: 650; }
+:lang(ko) .prose em { font-style: normal; font-weight: 600; }
+
+.prose blockquote { margin: 1.6em 0; padding: 4px 0 4px 24px; border-left: 3px solid var(--accent); font-style: italic; font-size: 1.08em; line-height: 1.55; color: var(--ink); }
+:lang(ko) .prose blockquote { font-style: normal; font-size: 1em; line-height: 1.9; color: var(--ink-2); }
+.prose blockquote > * + * { margin-top: 0.7em; }
+
+.prose ul, .prose ol { padding-left: 1.3em; }
+.prose li + li { margin-top: 0.45em; }
+.prose li::marker { color: var(--accent); font-family: var(--mono); font-size: 0.8em; }
+
+.prose hr { border: 0; height: 10px; margin: 2.4em auto; width: 64px; background:
+  radial-gradient(circle, var(--ink) 2px, transparent 2.5px) 0 50% / 22px 10px repeat-x; }
+
+.prose .figure { margin: 2em calc(-1 * min(9rem, (100vw - var(--col)) / 2 - var(--pad))) ; }
+.prose .figure img { width: 100%; height: auto; background: var(--paper-2); }
+.prose .figure figcaption { font: 500 12px/1.5 var(--mono); color: var(--ink-3); margin-top: 10px; letter-spacing: 0.02em; }
+.prose > img { width: 100%; height: auto; }
+
+.endmark { max-width: calc(var(--col) + 2 * var(--pad)); margin: 2.2em auto 0; padding-inline: var(--pad); }
+.endmark span { display: inline-block; width: 10px; height: 10px; background: var(--accent); }
+
+.article-end { max-width: calc(var(--col) + 2 * var(--pad)); margin: clamp(48px, 6vw, 72px) auto 0; padding-inline: var(--pad); display: grid; gap: clamp(36px, 5vw, 56px); }
+
+.author-box { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 20px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.author-box img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; }
+.author-box .name { font: 600 19px/1.2 var(--serif); }
+.author-box p { font: 400 16px/1.6 var(--serif); color: var(--ink-2); margin-top: 8px; }
+:lang(ko) .author-box p { font-size: 15px; line-height: 1.8; }
+.author-box .links { display: flex; flex-wrap: wrap; gap: 14px 22px; margin-top: 16px; }
+
+.chapter-nav { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.chapter-nav a { padding: 20px 20px 22px 0; display: grid; gap: 8px; align-content: start; }
+.chapter-nav a + a, .chapter-nav .next { border-left: 1px solid var(--hair); padding-left: 20px; padding-right: 0; text-align: right; }
+.chapter-nav .t { font: 600 20px/1.25 var(--serif); letter-spacing: -0.01em; }
+:lang(ko) .chapter-nav .t { line-height: 1.45; font-weight: 700; font-size: 18px; }
+.chapter-nav a:hover .t { color: var(--accent); }
+.chapter-nav .empty { border-left: 1px solid var(--hair); }
+
+@media (max-width: 640px) {
+  .byline { flex-wrap: wrap; }
+  .byline .pair { margin-left: 62px; }
+  .prose { font-size: 18.5px; line-height: 1.68; }
+  :lang(ko) .prose { font-size: 17.5px; line-height: 1.95; }
+  .prose .figure { margin-inline: calc(-1 * var(--pad)); }
+  .chapter-nav { grid-template-columns: 1fr; }
+  .chapter-nav a + a, .chapter-nav .next { border-left: 0; border-top: 1px solid var(--hair); padding-left: 0; text-align: left; }
+  .article-lead { padding-inline: 0; }
+}

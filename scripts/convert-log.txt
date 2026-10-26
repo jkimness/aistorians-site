@@ -1,0 +1,22 @@
+EN be-a-messenger: image not in vault, dropped: Screenshot+2026-08-27+at+3.21.55 PM.png
+EN be-a-messenger: image not in vault, dropped: Screenshot+2026-08-27+at+3.22.04 PM.png
+EN be-a-messenger: image not in vault, dropped: Screenshot+2026-08-27+at+3.22.13 PM.png
+EN create-a-tradition: cover not in vault (tradition-1.png), typographic cover used
+EN create-a-tradition: image not in vault, dropped: tradition-1.png
+EN create-a-tradition: image not in vault, dropped: tradition-2.png
+EN create-a-tradition: image not in vault, dropped: tradition-3.png
+EN create-a-tradition: image not in vault, dropped: tradition-4.png
+EN create-a-tradition: image not in vault, dropped: tradition-5.png
+EN own-the-road: image not in vault, dropped: 02_common_rare.png
+EN we-are-all-historians-of-the-ai-age-ai-storians: cover not in vault (Screenshot+2026-08-27+at+2.59.39 PM.png), typographic cover used
+EN we-are-all-historians-of-the-ai-age-ai-storians: image not in vault, dropped: Screenshot+2026-08-27+at+2.59.39 PM.png
+EN why-jensen-never-says-data-center-anymore: cover not in vault (jensen-captain.png), typographic cover used
+EN why-jensen-never-says-data-center-anymore: image not in vault, dropped: jensen-captain.png
+EN why-jensen-never-says-data-center-anymore: image not in vault, dropped: apple-intelligence.png
+EN why-jensen-never-says-data-center-anymore: image not in vault, dropped: ai-factory.png
+EN what-googles-legendary-engineer-taught-me: image not in vault, dropped: image.jpg
+EN what-googles-legendary-engineer-taught-me: image not in vault, dropped: image+(1).jpg
+EN what-googles-legendary-engineer-taught-me: image not in vault, dropped: Screenshot+2026-08-29+at+12.38.11 PM.png
+KO we-are-all-historians-of-the-ai-age-ai-storians: 1 bare [이미지] markers dropped (no files in vault)
+KO be-a-messenger: 2 bare [이미지] markers dropped (no files in vault)
+KO create-a-tradition: 10 bare [이미지] markers dropped (no files in vault)
