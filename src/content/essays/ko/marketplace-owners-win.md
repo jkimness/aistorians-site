@@ -3,8 +3,6 @@ title: "장사꾼보다 장터 주인이 승리한다"
 deck: "지능이 싸질수록, 값은 손님이 모이는 장터를 쥔 쪽으로 간다"
 date: 2026-10-19
 lang: ko
-series: investing
-chapter: 2
 cover: "./images/marketplace-owners-win/00_cover.webp"
 coverAlt: ""
 source: "AI 시대를 읽는 투자 02화 장사꾼보다 장터 주인이 승리한다 브런치 발행 최종본.md"

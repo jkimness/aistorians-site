@@ -3,8 +3,7 @@ title: "Be a Host"
 deck: "When Buffett left the stage, half of Omaha stayed home: in the AI era, the host is the new influencer."
 date: 2026-10-06
 lang: en
-series: s1
-chapter: 3
+ep: 3
 cover: "./images/be-a-host-in-the-ai-era/01.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/be-a-host-in-the-ai-era"

@@ -3,8 +3,7 @@ title: "호스트가 되라"
 deck: "호스트가 새로운 인플루언서다."
 date: 2026-08-26
 lang: ko
-series: s1
-chapter: 3
+ep: 3
 cover: "./images/be-a-host-in-the-ai-era/01.webp"
 coverAlt: ""
 source: "Ep03 호스트가 되라 브런치 발행 최종본.md"

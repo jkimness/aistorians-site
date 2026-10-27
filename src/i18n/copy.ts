@@ -1,49 +1,102 @@
 // Page copy. Source of truth: vault "03 Site/aistorians.com 카피 v2.md" (approved 2026-10-20)
 // and "0 Aistorians Website - Content & Copy v1.md" (verified lines, marked v1).
-// New lines written for the site were approved by 대표님 on 2026-10-27 (marked 'approved 2026-10-27').
-// Mark any future new line DRAFT until it is approved.
+// Lines approved by 대표님 on 2026-10-27 are marked 'approved 2026-10-27'.
+// Lines written for the 2026-10-27 restructure (Services, no series, new headline) are marked DRAFT
+// until 대표님 OKs them. Unmarked lines are the 2026-10-20 approved copy.
 import type { Lang } from './index';
 
 export const COPY = {
   en: {
     meta: {
-      home: { title: 'Jae Kim, AI speaker and writer of ai storians', description: "Keynotes and workshops on what AI means for the 99.9% who don't build it. Essays in English and Korean." },
+      home: { title: 'Jae Kim, AI speaker and writer of ai storians', description: 'Know where the AI world is heading. Build your solution based on the future. AI business integration, advertising and marketing, and talks by Jae Kim.' }, // description DRAFT
+      services: { title: 'Services, Jae Kim', description: 'AI business integration, advertising and marketing, and speaking. Three ways to work with Jae Kim.' }, // DRAFT
       speaking: { title: 'Speaking, Jae Kim', description: 'Talks on AI, records, trust, and judgment for teams, leaders, and client events. In Korean or English.' },
-      contact: { title: 'Book Jae Kim', description: 'Tell us about your event. Keynotes, workshops, fireside chats.' },
+      contact: { title: 'Contact Jae Kim', description: 'AI business integration, advertising and marketing, speaking and lectures. Tell me what you have in mind.' }, // DRAFT
       about: { title: 'About Jae Kim', description: 'Writer of ai storians, former PR strategist at Edelman, co-host of FIRE사이드챗.' },
-      advisory: { title: 'Advisory, Jae Kim', description: 'Story strategy, AI content systems, and global go-to-market research for leadership teams.' },
-      writing: { title: 'Writing, ai storians', description: 'A weekly essay series on what AI means for the people who don\'t build it. In English and Korean.' },
+      writing: { title: 'Writing, ai storians', description: "Weekly essays on what AI means for the people who don't build it. In English and Korean, newest first." }, // DRAFT
       podcast: { title: 'FIRE사이드챗, the podcast', description: 'A Korean tech news show with an engineer. New episodes every Wednesday and Friday.' },
     },
     home: {
       kicker: 'Jae Kim',
-      headline: 'I explain what AI means for the 99.9 percent of us who will never build it.',
-      sub: 'And I help companies find their story in the AI era.',
-      primary: 'Book Jae to speak',
+      // approved 2026-10-27 (대표님 wording). The second sentence is set in the accent color.
+      headline: ['Know where the AI world is heading.', 'Build your solution based on the future.'],
+      primary: 'Start a conversation', // approved 2026-10-20 (was the advisory CTA)
       secondary: 'Read the essays',
-      proof: [
-        { label: 'Series', text: 'Author of the ai storians series, in English and Korean' },
-        { label: 'Career', text: 'Former PR strategist at Edelman' },
-        { label: 'Show', text: 'Co-host of FIRE사이드챗, a Korean tech show, twice a week' },
+      // approved 2026-10-27: links only
+      links: [
+        { key: 'youtube', label: 'YouTube', name: '@firesidechathq' },
+        { key: 'morganLetter', label: 'Substack', name: 'Morgan Letter' },
+        { key: 'threads', label: 'Threads', name: '@jkimmorgan' },
       ],
-      whatIDo: 'What I do',
+      servicesTitle: 'Services', // approved 2026-10-27 (was 'What I do')
       services: [
-        { key: 'speaking', title: 'Speaking', text: "Keynotes and workshops on what AI changes, and what it never will. For teams, leaders, and clients who don't build AI but have to live with it.", link: 'See talks' },
-        { key: 'advisory', title: 'Advisory', text: 'Brand story, AI video and content systems, and research for going global.', soon: 'Coming soon' },
-        { key: 'writing', title: 'Writing and podcast', text: 'The ai storians essays, every week, in English and Korean. And FIRE사이드챗, a Korean tech news show.', link: 'Read the essays' },
+        // text: approved advisory lede (2026-10-20), now the AI Business Integration service
+        { key: 'ai', title: 'AI Business Integration', text: 'AI is changing how a company is found, trusted, and remembered. I help leadership teams decide what their story is in the AI era, and then build the system that tells it.', link: 'See how it works' },
+        // DRAFT
+        { key: 'marketing', title: 'Advertising & Marketing', text: 'Advertising and partnership inquiries, and marketing consulting for brands. Built on a decade of brand stories at Edelman and Jackson Dawson.', link: 'See the details' },
+        // approved speaking text (2026-10-20) with 'lectures' added: DRAFT
+        { key: 'speaking', title: 'Speaking & Lectures', text: "Keynotes, lectures, and workshops on what AI changes, and what it never will. For teams, leaders, and clients who don't build AI but have to live with it.", link: 'See talks' },
       ],
-      season: 'The ai storians, Season 1',
-      seasonSub: 'Ten chapters. One command each. Start at chapter one.',
       podcastTitle: 'FIRE사이드챗',
       podcastText: 'A Korean tech news show with an engineer. New episodes every Wednesday and Friday.',
-      finalTitle: 'Planning an event?',
-      finalText: "Tell me about your audience. I'll reply within two business days.",
-      finalButton: 'Book Jae to speak',
+      // DRAFT: the general call, now that services are more than speaking
+      finalTitle: 'Have a project or an event in mind?',
+      finalText: "Tell me what you need. I'll reply within two business days.",
+      finalButton: 'Start a conversation',
     },
     newsletter: {
       lines: ['Information is cheap. Access is nearly free.', 'Interpretation is expensive. Trust is the most expensive.'],
       sub: 'One letter a week. Free.',
       button: 'Subscribe free',
+    },
+    services: {
+      kicker: 'Jae Kim',
+      title: 'Services',
+      lede: 'Three ways to work together. Each one starts from the same question: where is the AI world heading, and what should you build for it?', // DRAFT
+      ai: {
+        id: 'ai-business-integration',
+        title: 'AI Business Integration',
+        // approved 2026-10-20 (the former Advisory page)
+        lede: 'AI is changing how a company is found, trusted, and remembered. I help leadership teams decide what their story is in the AI era, and then build the system that tells it.',
+        helpTitle: 'What I help with',
+        help: [
+          { title: 'Story strategy for the AI era', text: 'Positioning, narrative, and leadership messaging for a market where anything can be generated, and "who said it" matters more than ever.' },
+          { title: 'AI content systems', text: 'Explainer videos, short-form channels, and production pipelines that a small team can actually run every week.' },
+          { title: 'Global go-to-market research', text: 'Market, competitor, and channel research for brands going abroad, built so the team can decide, not just read.' },
+        ],
+        howTitle: 'How we work',
+        how: [
+          { title: 'First conversation', text: 'What you sell, who buys it, and what is in the way.' },
+          { title: 'Research', text: 'Your market, your rivals, and how AI already describes you.' },
+          { title: 'Build', text: 'The story, the content, and the system that keeps shipping it.' },
+          { title: 'Review', text: "What moved, what didn't, and what to change next." },
+        ],
+        whoTitle: "Who it's for",
+        who: "CEOs, founders, and marketing leads who don't build AI, but whose business already lives in its era.",
+        note: 'Delivered with nesscre8tive × AI Storians. Selected work is available on request.',
+        cta: 'Start a conversation',
+      },
+      marketing: {
+        id: 'advertising-marketing',
+        title: 'Advertising & Marketing',
+        // DRAFT
+        lede: 'Business inquiries, from advertising to brand partnerships. And marketing consulting for brands that need to be found and trusted in the AI era.',
+        asksTitle: 'What you can ask about',
+        asks: [
+          { title: 'Advertising and sponsorship', text: 'Advertising and sponsored content inquiries. Tell me the brand, the audience, and the timing.' },
+          { title: 'Brand partnerships', text: 'Collaborations, co-produced content, and events with brands that fit.' },
+          { title: 'Marketing consulting', text: 'Positioning, campaigns, and content strategy, built on a decade of PR and brand work at Edelman and Jackson Dawson.' },
+        ],
+        cta: 'Send a business inquiry',
+      },
+      speaking: {
+        id: 'speaking',
+        title: 'Speaking & Lectures',
+        lede: "Keynotes, lectures, and workshops on what AI changes, and what it never will. For teams, leaders, and clients who don't build AI but have to live with it.",
+        talksTitle: 'Talks',
+        more: 'See talks and formats',
+        cta: 'Book Jae to speak',
+      },
     },
     speaking: {
       kicker: 'Jae Kim',
@@ -68,26 +121,31 @@ export const COPY = {
         { q: 'Recording?', a: 'Yes, with notice.' },
         { q: 'Fees?', a: 'Share your budget range in the form.' },
       ],
+      finalTitle: 'Planning an event?',
+      finalText: "Tell me about your audience. I'll reply within two business days.",
       cta: 'Book Jae to speak',
-      photoAlt: 'Jae Kim speaking at a podium',
     },
     contact: {
       kicker: 'Jae Kim',
-      title: 'Book Jae',
-      lede: 'Tell me about your event. I read every request myself.',
+      title: 'Contact', // DRAFT (was 'Book Jae')
+      lede: 'Tell me what you have in mind. I read every message myself.', // DRAFT
+      typeLabel: 'What is this about?', // DRAFT
+      types: { ai: 'AI Business Integration', marketing: 'Advertising & Marketing', speaking: 'Speaking & Lectures', other: 'Something else' },
+      speakingTitle: 'For speaking requests', // DRAFT
       fields: {
         org: 'Organization', event: 'Event name', date: 'Date', location: 'Location or online', audience: 'Audience size and who they are',
-        topic: 'Topic you have in mind', language: 'Language', ko: 'Korean', en: 'English', name: 'Name', email: 'Email', phone: 'Phone',
+        language: 'Language', ko: 'Korean', en: 'English', name: 'Name', email: 'Email', phone: 'Phone',
+        message: 'Tell me more', // DRAFT
       },
       optional: 'optional',
       button: 'Send request',
       done: "Thank you. Your request is in. You'll hear back soon.",
       direct: 'Prefer email?',
-      advisoryNote: 'For advisory work, write to',
     },
     about: {
       kicker: 'ai storians',
       title: 'About Jae Kim',
+      photoAlt: 'Jae Kim',
       paras: [
         'Jae Kim writes about AI and investing, and about the harder question underneath them: not just whether people survive the AI transition, but how they win it.',
         'Jae is the author of ai storians, a weekly essay series in English and Korean built on one idea. AI learned everything it knows from human records, so we are all historians of the AI era now.',
@@ -110,36 +168,10 @@ export const COPY = {
       ctaTitle: 'Want Jae at your event?',
       cta: 'Book Jae to speak',
     },
-    advisory: {
-      kicker: 'Jae Kim',
-      title: 'Advisory',
-      lede: 'AI is changing how a company is found, trusted, and remembered. I help leadership teams decide what their story is in the AI era, and then build the system that tells it.',
-      helpTitle: 'What I help with',
-      help: [
-        { title: 'Story strategy for the AI era', text: 'Positioning, narrative, and leadership messaging for a market where anything can be generated, and "who said it" matters more than ever.' },
-        { title: 'AI content systems', text: 'Explainer videos, short-form channels, and production pipelines that a small team can actually run every week.' },
-        { title: 'Global go-to-market research', text: 'Market, competitor, and channel research for brands going abroad, built so the team can decide, not just read.' },
-      ],
-      howTitle: 'How we work',
-      how: [
-        { title: 'First conversation', text: 'What you sell, who buys it, and what is in the way.' },
-        { title: 'Research', text: 'Your market, your rivals, and how AI already describes you.' },
-        { title: 'Build', text: 'The story, the content, and the system that keeps shipping it.' },
-        { title: 'Review', text: "What moved, what didn't, and what to change next." },
-      ],
-      whoTitle: "Who it's for",
-      who: "CEOs, founders, and marketing leads who don't build AI, but whose business already lives in its era.",
-      byline: 'Advisory work is delivered with nesscre8tive × AI Storians.',
-      cases: 'Selected work is available on request.',
-      cta: 'Start a conversation',
-    },
     writing: {
       kicker: 'ai storians',
       title: 'Writing',
-      lede: "ai storians is a weekly essay series on what AI means for the people who don't build it. Season 1 is ten chapters, each with one command. Start at chapter one.",
-      beyond: 'Beyond the series',
-      koreanOnly: 'In Korean',
-      koreanOnlySub: 'A separate series, written in Korean on Brunch.',
+      lede: "Weekly essays on what AI means for the people who don't build it. In English and Korean, newest first.", // DRAFT
     },
     podcast: {
       kicker: 'Podcast',
@@ -155,48 +187,102 @@ export const COPY = {
       ],
       listen: 'Listen and watch',
       watchLatest: 'Watch the latest episode',
+      live: 'Live', // approved 2026-10-27 ('라이브')
+      liveNote: 'Live on YouTube', // DRAFT
+      kvAlt: 'FIRE사이드챗 key visual: the two hosts, drawn as characters, in armchairs by a fireplace',
       inKorean: 'The show is in Korean.',
     },
   },
   ko: {
     meta: {
-      home: { title: '제이킴모건, AI 강연과 ai storians 연재', description: 'AI 를 만들지 않는 99.9% 를 위한 AI 강연과 워크숍. 한국어와 영어 에세이 연재.' },
+      home: { title: '제이킴모건, AI 강연과 ai storians 연재', description: 'AI 세상이 어디로 가는지 먼저 읽고, 그 미래를 기준으로 솔루션을 만듭니다. AI 비즈니스 통합, 광고와 마케팅, 강연과 강의.' }, // description DRAFT
+      services: { title: '서비스, 제이킴모건', description: 'AI 비즈니스 통합, 광고와 마케팅, 강연과 강의. 제이킴모건과 함께 일하는 세 가지 방법.' }, // DRAFT
       speaking: { title: '강연, 제이킴모건', description: '임직원, 리더, 고객 행사를 위한 AI 강연. 기록, 신뢰, 판단. 한국어와 영어.' },
-      contact: { title: '섭외 문의, 제이킴모건', description: '행사에 대해 알려 주세요. 키노트, 워크숍, 대담.' },
+      contact: { title: '문의, 제이킴모건', description: 'AI 비즈니스 통합, 광고와 마케팅, 강연과 강의 문의. 어떤 일인지 알려 주세요.' }, // DRAFT
       about: { title: '제이킴모건 소개', description: 'ai storians 작가, 전 에델만 PR 전략가, FIRE사이드챗 공동 진행.' },
-      advisory: { title: '자문, 제이킴모건', description: 'AI 시대의 브랜드 이야기, AI 영상과 콘텐츠 시스템, 해외 진출 리서치.' },
-      writing: { title: '글, ai storians', description: 'AI 를 만들지 않는 99.9% 를 위한 에세이. ai storians 연재와 AI 시대를 읽는 투자.' },
+      writing: { title: '글, ai storians', description: 'AI 를 만들지 않는 사람들에게 AI 가 무슨 뜻인지 쓰는 에세이. 한국어와 영어, 최신 글부터.' }, // DRAFT
       podcast: { title: 'FIRE사이드챗', description: '반도체 엔지니어와 함께하는 테크 뉴스 토크쇼. 매주 수요일, 금요일 새 회차.' },
     },
     home: {
       kicker: '제이킴모건',
-      headline: 'AI 를 만들지 않는 99.9% 에게, AI 가 무슨 뜻인지 번역합니다.',
-      sub: '그리고 AI 시대에 회사가 자기 이야기를 찾도록 돕습니다.',
-      primary: '강연 섭외 문의',
+      // DRAFT 2026-10-27: Korean translation of 대표님 headline
+      headline: ['AI 세상이 어디로 가는지 먼저 읽으세요.', '그 미래를 기준으로 솔루션을 만드세요.'],
+      primary: '문의하기', // DRAFT
       secondary: '글 읽기',
-      proof: [
-        { label: '연재', text: 'ai storians 연재 작가, 한국어와 영어' },
-        { label: '이력', text: '전 에델만 PR 전략가' },
-        { label: '방송', text: '테크 토크쇼 FIRE사이드챗 공동 진행, 주 2회' },
+      links: [
+        { key: 'youtube', label: 'YouTube', name: '@firesidechathq' },
+        { key: 'morganLetter', label: 'Substack', name: '모건 레터' },
+        { key: 'threads', label: 'Threads', name: '@jkimmorgan' },
       ],
-      whatIDo: '하는 일',
+      servicesTitle: '서비스',
       services: [
-        { key: 'speaking', title: '강연', text: 'AI 가 바꾸는 것과 끝내 바꾸지 못하는 것에 대한 키노트와 워크숍. AI 를 만들지는 않지만 AI 와 살아야 하는 임직원, 리더, 고객을 위한 강연입니다.', link: '강연 보기' },
-        { key: 'advisory', title: '자문', text: 'AI 시대의 브랜드 이야기, AI 영상과 콘텐츠 시스템, 해외 진출 리서치.', soon: '곧 열립니다' },
-        { key: 'writing', title: '글과 방송', text: '매주 연재하는 ai storians 에세이, 한국어와 영어로. 그리고 한국어 테크 뉴스 토크쇼 FIRE사이드챗.', link: '글 읽기' },
+        // DRAFT: Korean of the approved advisory lede
+        { key: 'ai', title: 'AI 비즈니스 통합', text: 'AI 는 회사가 발견되고, 신뢰받고, 기억되는 방식을 바꾸고 있습니다. AI 시대에 우리 회사의 이야기가 무엇인지 리더와 함께 정하고, 그 이야기를 전하는 시스템까지 만듭니다.', link: '진행 방식 보기' },
+        // DRAFT
+        { key: 'marketing', title: '광고와 마케팅', text: '광고와 협업 같은 비즈니스 문의, 그리고 브랜드 마케팅 컨설팅. 에델만과 잭슨 도슨에서 10년 동안 브랜드의 이야기를 만든 경험으로 일합니다.', link: '자세히 보기' },
+        // approved speaking text (2026-10-20) with 강의 added: DRAFT
+        { key: 'speaking', title: '강연과 강의', text: 'AI 가 바꾸는 것과 끝내 바꾸지 못하는 것에 대한 키노트, 강의, 워크숍. AI 를 만들지는 않지만 AI 와 살아야 하는 임직원, 리더, 고객을 위한 강연입니다.', link: '강연 보기' },
       ],
-      season: 'ai storians 연재',
-      seasonSub: '10화 완결. 한 편에 하나의 명령.',
       podcastTitle: 'FIRE사이드챗',
       podcastText: '반도체 엔지니어와 함께하는 테크 뉴스 토크쇼. 매주 수요일, 금요일 새 회차가 올라옵니다.',
-      finalTitle: '행사를 준비하고 계신가요?',
-      finalText: '청중에 대해 알려 주세요. 영업일 이틀 안에 답장 드립니다.',
-      finalButton: '강연 섭외 문의',
+      // DRAFT
+      finalTitle: '준비 중인 프로젝트나 행사가 있으신가요?',
+      finalText: '필요한 것을 알려 주세요. 영업일 이틀 안에 답장 드립니다.',
+      finalButton: '문의하기',
     },
     newsletter: {
       lines: ['정보는 쌉니다. 액세스는 공짜에 가깝습니다.', '해석은 비쌉니다. 신뢰는 가장 비쌉니다.'],
       sub: '일주일에 한 편, 무료로 보내 드립니다.',
       button: '무료 구독',
+    },
+    services: {
+      kicker: '제이킴모건',
+      title: '서비스',
+      lede: '함께 일하는 세 가지 방법. 모두 같은 질문에서 시작합니다. AI 세상은 어디로 가고 있고, 그 미래를 위해 무엇을 만들어야 하는가.', // DRAFT
+      ai: {
+        id: 'ai-business-integration',
+        title: 'AI 비즈니스 통합',
+        // DRAFT: Korean of the approved EN advisory copy below
+        lede: 'AI 는 회사가 발견되고, 신뢰받고, 기억되는 방식을 바꾸고 있습니다. AI 시대에 우리 회사의 이야기가 무엇인지 리더와 함께 정하고, 그 이야기를 전하는 시스템까지 만듭니다.',
+        helpTitle: '돕는 일',
+        help: [
+          { title: 'AI 시대의 스토리 전략', text: '무엇이든 생성되는 시장, "누가 말했는가"가 어느 때보다 중요한 시장을 위한 포지셔닝, 내러티브, 리더 메시지.' },
+          { title: 'AI 콘텐츠 시스템', text: '설명 영상, 숏폼 채널, 그리고 작은 팀이 매주 실제로 돌릴 수 있는 제작 파이프라인.' },
+          { title: '해외 진출 리서치', text: '해외로 나가는 브랜드를 위한 시장, 경쟁사, 채널 리서치. 읽고 끝나는 보고서가 아니라 팀이 결정할 수 있게 만듭니다.' },
+        ],
+        howTitle: '진행 방식',
+        how: [
+          { title: '첫 대화', text: '무엇을 팔고, 누가 사고, 무엇이 가로막고 있는지.' },
+          { title: '리서치', text: '시장, 경쟁사, 그리고 AI 가 지금 우리 회사를 어떻게 설명하는지.' },
+          { title: '구축', text: '이야기, 콘텐츠, 그리고 그것을 계속 내보내는 시스템.' },
+          { title: '리뷰', text: '무엇이 움직였고 무엇이 그대로인지, 다음에 무엇을 바꿀지.' },
+        ],
+        whoTitle: '이런 분께',
+        who: 'AI 를 만들지는 않지만, 이미 AI 시대에 사업을 하고 있는 대표, 창업자, 마케팅 리더.',
+        note: 'nesscre8tive × AI Storians 와 함께 진행합니다. 사례는 요청하시면 보내 드립니다.',
+        cta: '문의하기',
+      },
+      marketing: {
+        id: 'advertising-marketing',
+        title: '광고와 마케팅',
+        // DRAFT
+        lede: '광고부터 브랜드 협업까지, 비즈니스 문의를 받습니다. 그리고 AI 시대에 발견되고 신뢰받아야 하는 브랜드를 위해 마케팅 컨설팅을 합니다.',
+        asksTitle: '문의할 수 있는 것',
+        asks: [
+          { title: '광고와 협찬', text: '광고, 협찬 콘텐츠 문의. 브랜드, 타깃, 시기를 알려 주세요.' },
+          { title: '브랜드 협업', text: '결이 맞는 브랜드와의 협업, 공동 제작 콘텐츠, 행사.' },
+          { title: '마케팅 컨설팅', text: '포지셔닝, 캠페인, 콘텐츠 전략. 에델만과 잭슨 도슨에서 10년 동안 PR 과 브랜드 일을 한 경험 위에서 돕습니다.' },
+        ],
+        cta: '비즈니스 문의하기',
+      },
+      speaking: {
+        id: 'speaking',
+        title: '강연과 강의',
+        lede: 'AI 가 바꾸는 것과 끝내 바꾸지 못하는 것에 대한 키노트, 강의, 워크숍. AI 를 만들지는 않지만 AI 와 살아야 하는 임직원, 리더, 고객을 위한 강연입니다.',
+        talksTitle: '강연 메뉴',
+        more: '강연과 형식 보기',
+        cta: '강연 섭외 문의',
+      },
     },
     speaking: {
       kicker: '제이킴모건',
@@ -221,26 +307,31 @@ export const COPY = {
         { q: '녹화해도 되나요?', a: '미리 말씀해 주시면 됩니다.' },
         { q: '비용은?', a: '문의 폼에 예산 범위를 골라 주세요.' },
       ],
+      finalTitle: '행사를 준비하고 계신가요?',
+      finalText: '청중에 대해 알려 주세요. 영업일 이틀 안에 답장 드립니다.',
       cta: '강연 섭외 문의',
-      photoAlt: '연단에서 강연하는 제이킴모건',
     },
     contact: {
       kicker: '제이킴모건',
-      title: '섭외 문의',
-      lede: '행사에 대해 알려 주세요. 문의는 제가 직접 읽습니다.',
+      title: '문의', // DRAFT (was '섭외 문의')
+      lede: '어떤 일인지 알려 주세요. 문의는 제가 직접 읽습니다.', // DRAFT
+      typeLabel: '어떤 문의인가요?', // DRAFT
+      types: { ai: 'AI 비즈니스 통합', marketing: '광고와 마케팅', speaking: '강연과 강의', other: '기타' },
+      speakingTitle: '강연 문의라면', // DRAFT
       fields: {
         org: '기관', event: '행사 이름', date: '날짜', location: '장소 또는 온라인', audience: '청중 수와 성격',
-        topic: '원하는 주제', language: '언어', ko: '한국어', en: '영어', name: '이름', email: '이메일', phone: '전화',
+        language: '언어', ko: '한국어', en: '영어', name: '이름', email: '이메일', phone: '전화',
+        message: '문의 내용', // DRAFT
       },
       optional: '선택',
-      button: '섭외 문의 보내기',
+      button: '문의 보내기', // DRAFT (was '섭외 문의 보내기')
       done: '감사합니다. 문의가 잘 도착했습니다. 곧 답장 드리겠습니다.',
       direct: '메일이 편하신가요?',
-      advisoryNote: '자문 문의는 메일로 보내 주세요.',
     },
     about: {
       kicker: 'ai storians',
       title: '제이킴모건 소개',
+      photoAlt: '제이킴모건',
       paras: [
         '제이킴모건은 AI 와 투자에 대해 씁니다. 그리고 그 아래 더 어려운 질문을 붙잡습니다. 사람이 AI 전환을 버텨 내는가가 아니라, 어떻게 이기는가.',
         '한국어와 영어로 매주 연재하는 에세이 ai storians 의 작가입니다. 연재는 한 가지 생각에서 시작했습니다. AI 는 아는 모든 것을 사람의 기록에서 배웠다. 그러니 이제 우리 모두가 AI 시대의 역사학자다.',
@@ -263,28 +354,10 @@ export const COPY = {
       ctaTitle: '행사에 제이킴모건을 모시고 싶으신가요?',
       cta: '강연 섭외 문의',
     },
-    advisory: {
-      kicker: '제이킴모건',
-      title: '자문',
-      lede: 'AI 시대의 브랜드 이야기, AI 영상과 콘텐츠 시스템, 해외 진출 리서치. 곧 열립니다.',
-      helpTitle: '',
-      help: [] as { title: string; text: string }[],
-      howTitle: '',
-      how: [] as { title: string; text: string }[],
-      whoTitle: '',
-      who: '',
-      byline: '',
-      cases: '',
-      cta: '메일로 문의하기',
-    },
     writing: {
       kicker: 'ai storians',
       title: '글',
-      // approved 2026-10-27 (built from the approved speaker bio 2-5 and the v1 playbook line)
-      lede: 'AI 를 만들지 않는 사람들에게 AI 가 무슨 뜻인지 쓰는 에세이. ai storians 는 10화로 완결됐다. 한 편에 하나의 명령. 이미 이기고 있는 사람들과 브랜드가 증명한다.',
-      beyond: '연재 밖 글',
-      koreanOnly: 'AI 시대를 읽는 투자',
-      koreanOnlySub: '이 연재는 돈의 흐름으로 AI 시대를 읽는다. 종목을 고르는 글이 아니다. 일주일에 두세 번, 한 편씩 쓴다.',
+      lede: 'AI 를 만들지 않는 사람들에게 AI 가 무슨 뜻인지 쓰는 에세이. 모든 글을 최신순으로 싣는다.', // DRAFT
     },
     podcast: {
       kicker: '파사챗',
@@ -299,6 +372,9 @@ export const COPY = {
       ],
       listen: '듣고 보기',
       watchLatest: '최신 회차 보기',
+      live: '라이브',
+      liveNote: '유튜브 라이브', // DRAFT
+      kvAlt: 'FIRE사이드챗 키 비주얼. 벽난로 앞 안락의자에 앉은 두 호스트를 캐릭터로 그린 그림',
       inKorean: '',
     },
   },

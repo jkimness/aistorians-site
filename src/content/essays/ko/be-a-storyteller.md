@@ -3,8 +3,7 @@ title: "스토리텔러가 되어라"
 deck: "정보는 무한하다. 병목은 전달이다."
 date: 2026-10-07
 lang: ko
-series: s1
-chapter: 9
+ep: 9
 cover: "./images/be-a-storyteller/00_cover_brunch.webp"
 coverAlt: ""
 source: "Ep09 스토리텔러가 되어라 브런치 발행 최종본.md"

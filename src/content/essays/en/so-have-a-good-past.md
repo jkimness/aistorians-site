@@ -3,8 +3,7 @@ title: "So, Have a Good Past"
 deck: "AI, the most future-facing technology in history, is quietly repricing the one thing you can’t fake."
 date: 2026-10-07
 lang: en
-series: s1
-chapter: 5
+ep: 5
 cover: "./images/so-have-a-good-past/04.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/so-have-a-good-past"

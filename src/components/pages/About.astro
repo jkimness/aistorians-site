@@ -1,9 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHead from '../PageHead.astro';
-import Hedcut from '../Hedcut.astro';
 import FinalCta from '../FinalCta.astro';
-import { ROUTES, UI, type Lang } from '../../i18n';
+import { Image } from 'astro:assets';
+import portrait from '../../assets/jae-portrait.jpg';
+import { ROUTES, type Lang } from '../../i18n';
 import { copy } from '../../i18n/copy';
 import { LINKS } from '../../site';
 interface Props { lang: Lang }
@@ -12,9 +13,9 @@ const c = copy(lang);
 const a = c.about;
 const find = [
   { name: lang === 'ko' ? 'ai storians, 섭스택' : 'ai storians on Substack', where: 'aistorians.substack.com', href: LINKS.substack },
-  { name: lang === 'ko' ? '브런치 연재' : 'Brunch (Korean)', where: 'brunch.co.kr/@jkimmorgan', href: LINKS.brunch },
   { name: lang === 'ko' ? '모건 레터' : 'Morgan Letter', where: 'jkimmorgan.substack.com', href: LINKS.morganLetter },
-  { name: 'FIRE사이드챗', where: 'YouTube', href: LINKS.youtube },
+  { name: 'FIRE사이드챗', where: 'YouTube @firesidechathq', href: LINKS.youtube },
+  { name: lang === 'ko' ? '브런치 연재' : 'Brunch (Korean)', where: 'brunch.co.kr/@jkimmorgan', href: LINKS.brunch },
   { name: 'Threads', where: '@jkimmorgan', href: LINKS.threads },
   { name: 'Instagram', where: '@jkimmorgan', href: LINKS.instagram },
 ];
@@ -22,7 +23,9 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Person', name: 'Jae
 ---
 <Base lang={lang} title={c.meta.about.title} description={c.meta.about.description} path={ROUTES.about[lang]} alternates={{ en: ROUTES.about.en, ko: ROUTES.about.ko }} jsonLd={jsonLd}>
   <PageHead kicker={a.kicker} title={a.title}>
-    <div class="portrait-col"><Hedcut eager alt={lang === 'ko' ? '제이킴모건 점묘 초상' : 'Jae Kim, stipple portrait'} /></div>
+    <figure class="portrait-col portrait-photo">
+      <Image src={portrait} alt={a.photoAlt} widths={[420, 640, 780]} sizes="(max-width: 960px) 90vw, 460px" loading="eager" fetchpriority="high" />
+    </figure>
   </PageHead>
   <div class="wrap rows">
     <section class="row" style="align-items:start">
@@ -46,5 +49,5 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'Person', name: 'Jae
       </div>
     </section>
   </div>
-  <FinalCta lang={lang} title={a.ctaTitle} text={c.home.finalText} button={a.cta} />
+  <FinalCta lang={lang} title={a.ctaTitle} text={c.speaking.finalText} button={a.cta} />
 </Base>

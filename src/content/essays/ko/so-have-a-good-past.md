@@ -3,8 +3,7 @@ title: "좋은 과거를 가져라"
 deck: "AI 시대를 가져온 사람이 주는 교훈"
 date: 2026-09-09
 lang: ko
-series: s1
-chapter: 5
+ep: 5
 cover: "./images/so-have-a-good-past/04.webp"
 coverAlt: ""
 source: "Ep05 좋은 과거를 가져라 브런치 발행 최종본.md"

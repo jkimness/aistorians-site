@@ -3,8 +3,6 @@ title: "돈은 먼저 도착한다"
 deck: "기술 혁명마다 돈이 먼저 오고, 삶은 나중에 바뀐다"
 date: 2026-10-16
 lang: ko
-series: investing
-chapter: 1
 cover: "./images/money-arrives-first/00_cover.webp"
 coverAlt: ""
 source: "AI 시대를 읽는 투자 01화 돈은 먼저 도착한다 브런치 발행 최종본.md"

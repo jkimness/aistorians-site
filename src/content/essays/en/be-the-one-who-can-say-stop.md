@@ -3,8 +3,7 @@ title: "Be the One Who Can Say Stop"
 deck: "Nobody rode the elevator until it had a brake, and in the age of AI agents, the person who can say stop holds the power."
 date: 2026-10-16
 lang: en
-series: s1
-chapter: 8
+ep: 8
 cover: "./images/be-the-one-who-can-say-stop/01_cover_brunch.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/be-the-one-who-can-say-stop"

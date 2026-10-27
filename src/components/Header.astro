@@ -20,7 +20,6 @@ const langLinks = lang === 'en'
   <div class="front-top">
     <div class="wrap topbar">
       <span class="ear">{t.est}</span>
-      <span class="ear ear-motto" aria-hidden="true"></span>
       <nav class="langs" aria-label="Language">
         {langLinks.map((x) => x.cur
           ? <span aria-current="true" lang={x.l}>{x.label}</span>
@@ -30,7 +29,6 @@ const langLinks = lang === 'en'
     <div class="wrap"><hr class="hair" /></div>
     <div class="wrap nameplate">
       <Wordmark href={home} />
-      <p class="motto">{t.motto}</p>
     </div>
     <div class="wrap"><hr class="rule-double" /></div>
   </div>

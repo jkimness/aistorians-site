@@ -1,7 +1,7 @@
 ---
-// Drawn cover for essays without a lead image: brand navy, coral chapter number, halftone corner.
-interface Props { n?: number; tag?: string; seed?: string }
-const { n, tag = 'ai storians', seed = 'x' } = Astro.props;
+// Drawn cover for an essay or note without a lead image: brand navy, a coral halftone corner, one glyph.
+interface Props { tag?: string; seed?: string; glyph?: string }
+const { tag = 'ai storians', seed = 'x', glyph = '§' } = Astro.props;
 let h = 0; for (const c of seed) h = (h * 31 + c.charCodeAt(0)) >>> 0;
 const cx = 10 + (h % 7), cy = 1 + ((h >> 3) % 4);
 const dots: { x: number; y: number; r: number }[] = [];
@@ -14,5 +14,5 @@ for (let y = 0; y < 9; y++) for (let x = 0; x < 14; x++) {
 <div class="tcover" aria-hidden="true">
   <span class="tag">{tag}</span>
   <svg class="dots" viewBox="0 0 14 9">{dots.map((d) => <circle cx={d.x} cy={d.y} r={d.r} fill="#ec8a6c" />)}</svg>
-  <span class="num">{n != null ? String(n).padStart(2, '0') : '§'}</span>
+  <span class="num">{glyph}</span>
 </div>

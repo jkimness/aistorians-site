@@ -1,19 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import TypoCover from './TypoCover.astro';
+import EpTitle from './EpTitle.astro';
 import { UI, essayPath, type Lang } from '../i18n';
-import { slugOf, type Essay } from '../lib/essays';
+import { slugOf, readingMinutes, type Essay } from '../lib/essays';
 interface Props { e: Essay; lang: Lang; cover?: boolean }
 const { e, lang, cover = true } = Astro.props;
 const t = UI[lang];
 const d = e.data;
-const label = d.series === 's1' && d.chapter ? t.chapter(d.chapter) : d.series === 'investing' ? t.seriesInvesting : t.standalone;
 ---
 <a class="story" href={essayPath(lang, slugOf(e))}>
   {cover && (d.cover
     ? <div class="cover"><Image src={d.cover} alt={d.coverAlt} widths={[420, 640, 900]} sizes="(max-width: 960px) 40vw, 400px" /></div>
-    : <TypoCover n={d.chapter} seed={slugOf(e)} tag={d.series === 's1' ? 'ai storians' : label} />)}
-  <div class="meta meta-row"><span>{label}</span><time datetime={d.date.toISOString()}>{t.dateFmt(d.date)}</time></div>
-  <h3>{d.title}</h3>
+    : <TypoCover seed={slugOf(e)} />)}
+  <div class="meta meta-row"><time datetime={d.date.toISOString()}>{t.dateFmt(d.date)}</time><span>{t.minRead(readingMinutes(e.body, lang))}</span></div>
+  <h3><EpTitle title={d.title} ep={d.ep} /></h3>
   {d.deck && <p class="deck">{d.deck}</p>}
 </a>

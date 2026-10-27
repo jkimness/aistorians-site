@@ -1,6 +1,0 @@
----
-// WSJ style stipple portrait, drawn by an algorithm (weighted Voronoi stippling) from a photograph.
-interface Props { light?: boolean; alt?: string; class?: string; eager?: boolean }
-const { light = false, alt = 'Jae Kim, stipple portrait', class: cls = '', eager = false } = Astro.props;
----
-<img class={cls} src={light ? '/jae-hedcut-light.svg' : '/jae-hedcut.svg'} width="620" height="590" alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" fetchpriority={eager ? 'high' : 'auto'} />

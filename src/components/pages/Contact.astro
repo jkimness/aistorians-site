@@ -1,18 +1,27 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHead from '../PageHead.astro';
-import { ROUTES, type Lang } from '../../i18n';
+import { ROUTES, UI, type Lang } from '../../i18n';
 import { copy } from '../../i18n/copy';
 import { SITE } from '../../site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const c = copy(lang);
+const t = UI[lang];
 const f = c.contact.fields;
+const types = c.contact.types;
+const s = c.services;
 const live = Boolean(SITE.web3formsKey);
-const subject = lang === 'ko' ? '강연 섭외 문의 (aistorians.com)' : 'Speaking request (aistorians.com)';
+const subject = lang === 'ko' ? '새 문의 (aistorians.com)' : 'New inquiry (aistorians.com)';
 const action = live ? 'https://api.web3forms.com/submit' : `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}`;
 const enctype = live ? undefined : 'text/plain';
 const thanks = SITE.url + (lang === 'ko' ? '/ko/contact-thanks' : '/contact-thanks');
+const typeList = [
+  { id: 'type-ai', value: types.ai },
+  { id: 'type-marketing', value: types.marketing },
+  { id: 'type-speaking', value: types.speaking },
+  { id: 'type-other', value: types.other },
+];
 ---
 <Base lang={lang} title={c.meta.contact.title} description={c.meta.contact.description} path={ROUTES.contact[lang]} alternates={{ en: ROUTES.contact.en, ko: ROUTES.contact.ko }}>
   <PageHead kicker={c.contact.kicker} title={c.contact.title} lede={c.contact.lede} />
@@ -26,30 +35,49 @@ const thanks = SITE.url + (lang === 'ko' ? '/ko/contact-thanks' : '/contact-than
           <input type="hidden" name="redirect" value={thanks} />
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
         </>}
-        <div class="field"><label for="org">{f.org}</label><input id="org" name="organization" required autocomplete="organization" /></div>
-        <div class="field"><label for="event">{f.event}</label><input id="event" name="event" required /></div>
-        <div class="field"><label for="date">{f.date}</label><input id="date" name="date" required placeholder={lang === 'ko' ? '예: 2026년 12월 3일' : 'e.g. Dec 3, 2026'} /></div>
-        <div class="field"><label for="loc">{f.location}</label><input id="loc" name="location" required /></div>
-        <div class="field field--full"><label for="aud">{f.audience}</label><input id="aud" name="audience" required /></div>
-        <div class="field field--full"><label for="topic">{f.topic}<span class="opt">{c.contact.optional}</span></label><textarea id="topic" name="topic"></textarea></div>
         <fieldset class="field field--full">
-          <legend>{f.language}</legend>
-          <div class="checks">
-            <label><input type="checkbox" name="language" value="Korean" /> {f.ko}</label>
-            <label><input type="checkbox" name="language" value="English" /> {f.en}</label>
+          <legend>{c.contact.typeLabel}</legend>
+          <div class="choices">
+            {typeList.map((x) => (
+              <label class="choice" for={x.id}><input type="radio" id={x.id} name="inquiry" value={x.value} required /><span>{x.value}</span></label>
+            ))}
           </div>
         </fieldset>
         <div class="field"><label for="name">{f.name}</label><input id="name" name="name" required autocomplete="name" /></div>
         <div class="field"><label for="email">{f.email}</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+        <div class="field"><label for="org">{f.org}<span class="opt">{c.contact.optional}</span></label><input id="org" name="organization" autocomplete="organization" /></div>
         <div class="field"><label for="phone">{f.phone}<span class="opt">{c.contact.optional}</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" /></div>
+
+        <fieldset class="field field--full speaking-only">
+          <legend class="kicker">{c.contact.speakingTitle}</legend>
+          <div class="sub-grid">
+            <div class="field"><label for="event">{f.event}</label><input id="event" name="event" /></div>
+            <div class="field"><label for="date">{f.date}</label><input id="date" name="date" placeholder={lang === 'ko' ? '예: 2026년 12월 3일' : 'e.g. Dec 3, 2026'} /></div>
+            <div class="field"><label for="loc">{f.location}</label><input id="loc" name="location" /></div>
+            <div class="field"><label for="aud">{f.audience}</label><input id="aud" name="audience" /></div>
+            <div class="field field--full">
+              <span class="label-like" id="lang-label">{f.language}</span>
+              <div class="checks" role="group" aria-labelledby="lang-label">
+                <label><input type="checkbox" name="language" value="Korean" /> {f.ko}</label>
+                <label><input type="checkbox" name="language" value="English" /> {f.en}</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="field field--full"><label for="message">{f.message}</label><textarea id="message" name="message" required></textarea></div>
         <div class="form-foot">
           <button class="btn" type="submit">{c.contact.button}</button>
         </div>
       </form>
       <aside class="contact-aside">
         <div>
-          <p class="kicker">{c.speaking.formatsTitle}</p>
-          <ul>{c.speaking.formats.map((x) => <li>{x}</li>)}</ul>
+          <p class="kicker">{t.nav.services}</p>
+          <ul>
+            <li><a href={`${ROUTES.services[lang]}#${s.ai.id}`}>{s.ai.title}</a></li>
+            <li><a href={`${ROUTES.services[lang]}#${s.marketing.id}`}>{s.marketing.title}</a></li>
+            <li><a href={ROUTES.speaking[lang]}>{s.speaking.title}</a></li>
+          </ul>
         </div>
         <div>
           <p class="kicker">{c.contact.direct}</p>

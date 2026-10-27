@@ -3,8 +3,7 @@ title: "AI 시대의 과거와 서사란?"
 deck: "AI 시대에서 이기고 싶다면, AI가 알 수 있는 과거를 만들자."
 date: 2026-09-16
 lang: ko
-series: s1
-chapter: 6
+ep: 6
 cover: "./images/press-record/01.webp"
 coverAlt: ""
 source: "Ep06 AI 시대의 과거와 서사란 브런치 발행 최종본.md"

@@ -3,8 +3,7 @@ title: "사람이 모이는 곳, 플랫폼"
 deck: "AI시대에서 플랫폼의 부익부 빈익빈은 계속 커진다"
 date: 2026-09-23
 lang: ko
-series: s1
-chapter: 7
+ep: 7
 cover: "./images/own-the-road/01_slack_teams.webp"
 coverAlt: ""
 source: "Ep07 사람이 모이는 곳, 플랫폼 브런치 발행본 (2026-10-14 수집).md"

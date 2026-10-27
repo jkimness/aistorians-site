@@ -3,8 +3,7 @@ title: "자동화를 막을 수 있는 사람이 되어라"
 deck: "에이전트 시대, 사람들은 멈출 수 있는 기계에 탄다"
 date: 2026-09-30
 lang: ko
-series: s1
-chapter: 8
+ep: 8
 cover: "./images/be-the-one-who-can-say-stop/01_cover_brunch.webp"
 coverAlt: ""
 source: "Ep08 자동화를 막을 수 있는 사람이 되어라 브런치 발행 최종본.md"

@@ -3,7 +3,6 @@ title: "Why Jensen Never Says \"Data Center\" Anymore"
 deck: "Everyone in tech says data center. He says AI factory. That one word moved $500 billion, and it explains America's whole AI plan."
 date: 2026-09-23
 lang: en
-series: standalone
 cover: "./images/why-jensen-never-says-data-center-anymore/cover-ai-factory.webp"
 coverAlt: "A sawtooth factory whose chimney releases a stream of dots"
 source: "https://www.aistorians.com/ai-storians/why-jensen-never-says-data-center-anymore"

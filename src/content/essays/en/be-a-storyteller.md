@@ -3,8 +3,7 @@ title: "Be a Storyteller"
 deck: "Information is now infinite and attention is not, so in the AI era the storyteller is the person who connects the two."
 date: 2026-10-08
 lang: en
-series: s1
-chapter: 9
+ep: 9
 cover: "./images/be-a-storyteller/00_cover_brunch.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/be-a-storyteller"

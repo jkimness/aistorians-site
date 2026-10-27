@@ -3,8 +3,7 @@ title: "Rule the AI Era"
 deck: "Ten Wednesdays, nine sentences, three words: the ai storians finale on what AI can never make, and what it takes to rule the AI era."
 date: 2026-10-17
 lang: en
-series: s1
-chapter: 10
+ep: 10
 cover: "./images/rule-the-ai-era/00_cover_brunch.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/rule-the-ai-era"

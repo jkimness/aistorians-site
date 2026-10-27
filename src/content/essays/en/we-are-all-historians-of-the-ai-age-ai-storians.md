@@ -3,8 +3,7 @@ title: "We are all historians of the AI Age: ai Storians"
 deck: "The most futuristic technology ever built is made, one hundred percent, of the past."
 date: 2026-08-27
 lang: en
-series: s1
-chapter: 1
+ep: 1
 cover: "./images/we-are-all-historians-of-the-ai-age-ai-storians/cover-historians.webp"
 coverAlt: "Layers of rock with a core sample drawn through them"
 source: "https://www.aistorians.com/ai-storians/we-are-all-historians-of-the-ai-age-ai-storians"

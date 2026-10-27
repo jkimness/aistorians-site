@@ -1,0 +1,116 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../PageHead.astro';
+import FinalCta from '../FinalCta.astro';
+import { ROUTES, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy(lang);
+const s = c.services;
+const contact = ROUTES.contact[lang];
+---
+<Base lang={lang} title={c.meta.services.title} description={c.meta.services.description} path={ROUTES.services[lang]} alternates={{ en: ROUTES.services.en, ko: ROUTES.services.ko }}>
+  <PageHead kicker={s.kicker} title={s.title} lede={s.lede} />
+
+  <nav class="svc-toc" aria-label={s.title}>
+    <div class="wrap">
+      <ol>
+        {[s.ai, s.marketing, s.speaking].map((x, i) => (
+          <li><a href={`#${x.id}`}><span class="n">{String(i + 1).padStart(2, '0')}</span><span class="t">{x.title}</span></a></li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+
+  <section class="svc" id={s.ai.id}>
+    <div class="wrap">
+      <header class="svc-head">
+        <span class="svc-num">01</span>
+        <div class="svc-head-text">
+          <h2 class="svc-title">{s.ai.title}</h2>
+          <p class="svc-lede">{s.ai.lede}</p>
+        </div>
+      </header>
+      <div class="rows">
+        <section class="row">
+          <div class="row-label"><p class="kicker">{s.ai.helpTitle}</p></div>
+          <div class="row-body talks">
+            {s.ai.help.map((h, i) => (
+              <div class="talk"><span class="n">{String(i + 1).padStart(2, '0')}</span><div><h3>{h.title}</h3><p>{h.text}</p></div></div>
+            ))}
+          </div>
+        </section>
+        <section class="row">
+          <div class="row-label"><p class="kicker">{s.ai.howTitle}</p></div>
+          <div class="row-body">
+            <ol class="steps">{s.ai.how.map((h, i) => <li><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{h.title}</h3><p>{h.text}</p></li>)}</ol>
+          </div>
+        </section>
+        <section class="row">
+          <div class="row-label"><p class="kicker">{s.ai.whoTitle}</p></div>
+          <div class="row-body prose-block">
+            <p class="svc-who">{s.ai.who}</p>
+            <p class="svc-note">{s.ai.note}</p>
+            <p class="svc-cta"><a class="btn" href={contact}>{s.ai.cta}</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id={s.marketing.id}>
+    <div class="wrap">
+      <header class="svc-head">
+        <span class="svc-num">02</span>
+        <div class="svc-head-text">
+          <h2 class="svc-title">{s.marketing.title}</h2>
+          <p class="svc-lede">{s.marketing.lede}</p>
+        </div>
+      </header>
+      <div class="rows">
+        <section class="row">
+          <div class="row-label"><p class="kicker">{s.marketing.asksTitle}</p></div>
+          <div class="row-body">
+            <div class="talks">
+              {s.marketing.asks.map((h, i) => (
+                <div class="talk"><span class="n">{String(i + 1).padStart(2, '0')}</span><div><h3>{h.title}</h3><p>{h.text}</p></div></div>
+              ))}
+            </div>
+            <p class="svc-cta"><a class="btn" href={contact}>{s.marketing.cta}</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id={s.speaking.id}>
+    <div class="wrap">
+      <header class="svc-head">
+        <span class="svc-num">03</span>
+        <div class="svc-head-text">
+          <h2 class="svc-title">{s.speaking.title}</h2>
+          <p class="svc-lede">{s.speaking.lede}</p>
+        </div>
+      </header>
+      <div class="rows">
+        <section class="row">
+          <div class="row-label"><p class="kicker">{s.speaking.talksTitle}</p></div>
+          <div class="row-body">
+            <ol class="talk-list">
+              {c.speaking.talks.map((k) => (
+                <li><a href={ROUTES.speaking[lang]}><span class="n">{String(k.n).padStart(2, '0')}</span><span class="t">{k.title}</span><span class="label">{k.who}</span></a></li>
+              ))}
+            </ol>
+            <p class="svc-cta">
+              <a class="btn" href={contact}>{s.speaking.cta}</a>
+              <a class="arrow-link" href={ROUTES.speaking[lang]}>{s.speaking.more}</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta lang={lang} />
+</Base>

@@ -3,8 +3,7 @@ title: "Be a Messenger"
 deck: "One farewell email erased 200 billion dollars from Google's market cap. Information is cheap. The messenger is the message."
 date: 2026-08-27
 lang: en
-series: s1
-chapter: 2
+ep: 2
 cover: "./images/be-a-messenger/thumbnail-messenger-is-the-message.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/be-a-messenger"

@@ -3,8 +3,7 @@ title: "Press Record"
 deck: "The Beatles won a 2025 Grammy because Lennon once pressed record, and in the AI era, a past that AI can’t read barely exists."
 date: 2026-10-08
 lang: en
-series: s1
-chapter: 6
+ep: 6
 cover: "./images/press-record/01.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/press-record"

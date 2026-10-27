@@ -3,8 +3,7 @@ title: "Own the Road"
 deck: "Slack built the better product and Microsoft won anyway: in the AI era, features get copied, and whoever owns distribution takes it all."
 date: 2026-10-15
 lang: en
-series: s1
-chapter: 7
+ep: 7
 cover: "./images/own-the-road/01_slack_teams.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/own-the-road"

@@ -1,6 +1,26 @@
 # BUILD_STATE.md
 
-마지막 갱신: 2026-10-27 (Cowork 세션, 대표님 "make it happen")
+마지막 갱신: 2026-10-27 저녁 (Cowork 세션, 대표님 피드백 2차 반영)
+
+## 2026-10-27 피드백 2차 (반영 끝, 미리보기 Version 4)
+- 헤드컷 초상, 무대 사진, 바이라인 동그라미 사진을 모두 뺐다. 제이킴 사진은 소개 페이지 컬러 사진 한 장 (IG 소개 01 사진 크롭, `src/assets/jae-portrait.jpg`). 스퀘어스페이스 원본 "251115-프로필15853_보정" 은 볼트에 없어서 못 찾았다. 다르면 볼트에 넣어 주시면 바꾼다.
+- 모토 "Written by a human, on the record." 와 홈 부제를 뺐다. 홈 헤드라인은 대표님 문장: "Know where the AI world is heading. Build your solution based on the future." (둘째 문장 악센트 색, 데스크톱에서 문장마다 한 줄).
+- 이력 3칸(Series, Career, Show)을 링크 3칸으로: YouTube @firesidechathq, Substack Morgan Letter, Threads @jkimmorgan. 유튜브 핸들은 채널 UCgN3d1yHYdS9qQOHDnDHViw 와 같음을 확인했다.
+- What I do 를 Services 로: AI Business Integration (옛 Advisory 내용, "곧 열립니다" 삭제), Advertising & Marketing, Speaking & Lectures. 서비스 페이지 /services, /ko/services 새로 만들고 /advisory 는 없앴다. 메뉴: 글, 파사챗, 서비스, 강연, 소개. 머리 버튼은 Contact.
+- 시리즈 개념 삭제: 홈의 시즌 1 목차, 글 페이지의 연재별 묶음, 화 번호 라벨, 커버 숫자를 모두 뺐다. 글 목록은 날짜순 하나. ai storians 회차는 제목에만 "ai storians ep.N". 투자 두 편과 Jensen 글은 표시 없음. 이전 글/다음 글도 날짜순.
+- 파사챗 페이지: FIRE사이드챗 로고(브랜드 키트 SVG)와 키 비주얼(벽난로 일러스트, 글자 없는 원본)을 올렸다. "라이브" 는 유튜브 라이브 링크 (youtube.com/@firesidechathq/live) 로 해석해 버튼을 달았다. 홈 파사챗 띠에도 로고와 라이브 버튼. 파사챗 페이지 바닥글에서는 모건 레터 링크를 뺀다 (볼트 규칙).
+- 문의 폼: 문의 종류 4개 (AI Business Integration, Advertising & Marketing, Speaking & Lectures, 기타). 강연을 고르면 행사 칸이 열린다. 이름, 이메일, 내용만 필수.
+- 기본 공유 카드(og-default.png)를 헤드컷 없이 다시 그렸다 (글자만, scripts/og.mjs).
+
+## DRAFT, 대표님 OK 필요 (copy.ts 에 DRAFT 표시)
+1. 한국어 헤드라인: "AI 세상이 어디로 가는지 먼저 읽으세요. / 그 미래를 기준으로 솔루션을 만드세요." (바닥글 문구로도 씀)
+2. Advertising & Marketing 카피 전부 (홈 카드, 서비스 페이지 소개, 문의 항목 3개, 버튼). 사실 근거는 승인된 이력 (에델만, 잭슨 도슨, 10년) 만 썼다.
+3. AI Business Integration 한국어판 (승인된 영어 Advisory 카피의 번역)
+4. 이름: Speaking & Lectures / 강연과 강의, 그리고 승인 문장에 lectures/강의 추가
+5. 일반 마무리 문구: "Have a project or an event in mind?" / "준비 중인 프로젝트나 행사가 있으신가요?" (강연 페이지는 기존 승인 문구 그대로)
+6. 문의 페이지 제목, 소개, 문의 종류 이름, "Tell me more / 문의 내용", 머리 버튼 "Contact / 문의하기"
+7. 서비스 페이지 소개, 글 페이지 소개, 메타 설명, "Live on YouTube / 유튜브 라이브"
+
 
 ## 한 일 (2026-10-26)
 - [x] 진단: 라이브 스퀘어스페이스 사이트와 v2 시안(코드 블록)은 둥근 버튼, 테두리 카드 3열, 네이비와 테라코타라서 흔한 랜딩 문법이었다.
@@ -26,12 +46,13 @@
 | 2 | DEPLOY.md 2부: 스퀘어스페이스 DNS 다섯 줄 | 대표님 (10분) |
 | 3 | Web3Forms Access Key | 대표님 메일함 (1분) |
 | 4 | 원본 그림 찾기 (스크린샷 6, tradition 2~5, Jensen 본문 2, 데일리 띵크 3) | Claude, 맥 폴더 허락 뒤 |
-| 5 | 투자 연재 slug 확정 (임시 money-arrives-first, marketplace-owners-win) | 영문판 생길 때 |
+| 5 | 투자 글 slug 확정 (임시 money-arrives-first, marketplace-owners-win) | 영문판 생길 때 |
+| 6 | 위 DRAFT 카피 OK | 대표님 |
 
 ## 빠진 그림 (볼트에 원본이 없어 이번에 못 넣음, 라이브 스퀘어스페이스에는 있다)
 - 영문: be-a-messenger 스크린샷 3, create-a-tradition tradition-1~5 (커버 포함), own-the-road 02_common_rare (영문판), we-are-all-historians 스크린샷 (커버), why-jensen 3장 (커버 포함), 데일리 띵크 3장
 - 한국어: we-are-all-historians 1, be-a-messenger 2, create-a-tradition 10 (원고에 [이미지] 자리만 있음). be-a-storyteller 는 원고에 그림 위치 표시가 없어 커버만 넣었다.
-- 커버가 없는 글은 남색 바탕에 산호색 회차 숫자 커버가 자동으로 그려진다.
+- 커버가 없는 글은 남색 바탕에 산호색 점 커버가 자동으로 그려진다 (숫자 없음). 지금은 모든 글에 커버가 있다.
 - 해결: 대표님이 그림 파일을 볼트에 넣어 주시거나, Claude 네트워크 허용 목록에 images.squarespace-cdn.com 을 추가하면 받아서 넣는다.
 
 ## 원고에서 본 것 (고치지 않음, voice lock)
@@ -49,4 +70,4 @@
 7. aistorians-publish 스킬의 "웹사이트" 칸을 스퀘어스페이스 화면 작업에서 이 저장소 마크다운 추가로 바꾼다
 
 ## 다음 세션은
-DEPLOY.md 1부부터. 끝나면 2부를 대표님과 함께.
+DRAFT 카피 OK 를 받고 approved 로 바꾼 뒤, DEPLOY.md 1부부터. 끝나면 2부를 대표님과 함께.

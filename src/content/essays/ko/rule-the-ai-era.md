@@ -3,8 +3,7 @@ title: "에필로그: AI 시대를 지배하자"
 deck: "아홉 개의 문장, 하나의 이름"
 date: 2026-10-14
 lang: ko
-series: s1
-chapter: 10
+ep: 10
 cover: "./images/rule-the-ai-era/00_cover_brunch.webp"
 coverAlt: ""
 source: "Ep10 에필로그 AI 시대를 지배하자 브런치 발행 최종본.md"

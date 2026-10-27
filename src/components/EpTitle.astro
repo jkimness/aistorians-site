@@ -1,0 +1,7 @@
+---
+// An essay title. ai storians episodes carry "ai storians ep.N" in front, in the accent color.
+// That prefix is the only place an episode shows (no series pages, no chapter labels).
+interface Props { title: string; ep?: number }
+const { title, ep } = Astro.props;
+---
+{ep != null && <><span class="ep">ai storians ep.{ep}</span>{' '}</>}{title}

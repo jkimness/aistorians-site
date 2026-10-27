@@ -3,8 +3,7 @@ title: "Create a Tradition"
 deck: "A small town in Georgia has the answer to the future of branding in the AI era."
 date: 2026-09-23
 lang: en
-series: s1
-chapter: 4
+ep: 4
 cover: "./images/create-a-tradition/cover-tradition.webp"
 coverAlt: "Tree rings with a measuring line, drawn in coral on navy"
 source: "https://www.aistorians.com/ai-storians/create-a-tradition"

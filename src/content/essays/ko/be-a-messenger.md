@@ -3,8 +3,7 @@ title: "메신저가 되어라."
 deck: "AI 시대에선 신뢰와 책임을 질 수 있는 인간, 메신저가 되야한다."
 date: 2026-08-19
 lang: ko
-series: s1
-chapter: 2
+ep: 2
 cover: "./images/be-a-messenger/thumbnail-messenger-is-the-message.webp"
 coverAlt: ""
 source: "Ep02 메신저가 되어라 브런치 발행본 (2026-10-14 수집).md"

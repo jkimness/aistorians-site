@@ -1,25 +1,20 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
+import EssayList from '../../components/EssayList.astro';
 import { getCollection } from 'astro:content';
 import { UI, thoughtPath } from '../../i18n';
+import type { ListItem } from '../../lib/essays';
 const t = UI.en;
-const list = (await getCollection('thoughts', (x) => !x.data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const items: ListItem[] = (await getCollection('thoughts', (x) => !x.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((x) => ({ href: thoughtPath(x.id.split('/').pop()!), title: x.data.title, deck: x.data.deck, date: x.data.date, label: t.thoughtsTitle, seed: x.id }));
 ---
 <Base lang="en" title="Daily thought, ai storians" description={t.thoughtsSub} path="/daily-thought" alternates={{ en: '/daily-thought' }}>
   <PageHead kicker={t.nav.writing} title={t.thoughtsTitle} lede={t.thoughtsSub} />
-  <section class="section">
+  <section class="section section--archive">
     <div class="wrap">
-      <ol class="index">
-        {list.map((x) => (
-          <li><a href={thoughtPath(x.id.split('/').pop()!)}>
-            <span class="n"></span>
-            <span class="t">{x.data.title}</span>
-            <span class="d">{x.data.deck}</span>
-            <time class="meta date" datetime={x.data.date.toISOString()}>{t.dateFmt(x.data.date)}</time>
-          </a></li>
-        ))}
-      </ol>
+      <EssayList items={items} lang="en" />
     </div>
   </section>
 </Base>

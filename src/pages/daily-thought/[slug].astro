@@ -22,7 +22,6 @@ const path = thoughtPath(x.id.split('/').pop()!);
       <h1 class="article-title">{x.data.title}</h1>
       {x.data.deck && <p class="article-deck">{x.data.deck}</p>}
       <div class="byline">
-        <img src="/jae-hedcut-avatar.webp" alt="" width="48" height="48" />
         <div>
           <div class="who">{t.by} <a href={ROUTES.about.en}>{t.author}</a></div>
           <div class="meta meta-row"><time datetime={x.data.date.toISOString()}>{t.dateFmt(x.data.date)}</time><span>{t.minRead(readingMinutes(x.body, 'en'))}</span></div>

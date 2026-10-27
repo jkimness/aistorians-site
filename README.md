@@ -1,6 +1,6 @@
 # aistorians.com (v3)
 
-ai storians, the record of the AI era. Essays by Jae Kim (제이킴모건) in English and Korean, plus speaking, advisory and the FIRE사이드챗 podcast.
+ai storians, the record of the AI era. Essays by Jae Kim (제이킴모건) in English and Korean, plus services (AI business integration, advertising and marketing, speaking) and the FIRE사이드챗 podcast.
 
 - Stack: Astro 7, static output, no client JavaScript.
 - Start: `npm install`, then `npm run dev` and open http://localhost:4321

@@ -1,0 +1,30 @@
+---
+// The archive: every piece in one list, newest first. Date, title (with the ep prefix for
+// ai storians episodes), deck, thumbnail. No series, no grouping.
+import { Image } from 'astro:assets';
+import TypoCover from './TypoCover.astro';
+import EpTitle from './EpTitle.astro';
+import { UI, type Lang } from '../i18n';
+import type { ListItem } from '../lib/essays';
+interface Props { items: ListItem[]; lang: Lang }
+const { items, lang } = Astro.props;
+const t = UI[lang];
+---
+<ol class="archive">
+  {items.map((x) => (
+    <li>
+      <a href={x.href}>
+        <div class="a-meta meta meta-row"><time datetime={x.date.toISOString()}>{t.dateFmt(x.date)}</time>{x.label && <span>{x.label}</span>}</div>
+        <div class="a-main">
+          <h3 class="a-title"><EpTitle title={x.title} ep={x.ep} /></h3>
+          {x.deck && <p class="a-deck">{x.deck}</p>}
+        </div>
+        <div class="a-thumb">
+          {x.cover
+            ? <Image src={x.cover} alt={x.coverAlt ?? ''} widths={[260, 520]} sizes="(max-width: 640px) 34vw, 260px" />
+            : <TypoCover seed={x.seed} tag={x.label ?? 'ai storians'} glyph="“" />}
+        </div>
+      </a>
+    </li>
+  ))}
+</ol>

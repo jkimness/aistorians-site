@@ -1,16 +1,42 @@
 ---
 import Base from '../../layouts/Base.astro';
-import PageHead from '../PageHead.astro';
-import PodcastBand from '../PodcastBand.astro';
+import FireLogo from '../FireLogo.astro';
+import { Image, getImage } from 'astro:assets';
+import kv from '../../assets/fireside-kv.webp';
 import { ROUTES, type Lang } from '../../i18n';
 import { copy } from '../../i18n/copy';
+import { LINKS } from '../../site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const c = copy(lang);
 const p = c.podcast;
+const og = (await getImage({ src: kv, width: 1200, height: 630, fit: 'cover', format: 'jpg' })).src;
 ---
-<Base lang={lang} title={c.meta.podcast.title} description={c.meta.podcast.description} path={ROUTES.podcast[lang]} alternates={{ en: ROUTES.podcast.en, ko: ROUTES.podcast.ko }}>
-  <PodcastBand lang={lang} kicker={p.kicker} title={p.title} text={p.lede} linkToPage={false} />
+<Base lang={lang} title={c.meta.podcast.title} description={c.meta.podcast.description} path={ROUTES.podcast[lang]} alternates={{ en: ROUTES.podcast.en, ko: ROUTES.podcast.ko }} image={og}>
+  <section class="night pod-hero">
+    <div class="wrap">
+      <div class="pod-hero-top">
+        <div>
+          <p class="kicker">{p.kicker}</p>
+          <h1 class="pod-title pod-title--page"><FireLogo /></h1>
+        </div>
+        <div class="pod-hero-side">
+          <p class="pod-desc">{p.lede}</p>
+          <div class="pod-links">
+            <a class="live" href={LINKS.youtubeLive} target="_blank" rel="noopener" title={p.liveNote}><span class="dot" aria-hidden="true"></span>{p.live}</a>
+            <a href={LINKS.youtube} target="_blank" rel="noopener">{lang === 'ko' ? '유튜브' : 'YouTube'}</a>
+            <a href={LINKS.spotify} target="_blank" rel="noopener">{lang === 'ko' ? '스포티파이' : 'Spotify'}</a>
+            <a href={LINKS.apple} target="_blank" rel="noopener">{lang === 'ko' ? '애플 팟캐스트' : 'Apple Podcasts'}</a>
+          </div>
+        </div>
+      </div>
+      <figure class="pod-kv">
+        <a href={LINKS.youtube} target="_blank" rel="noopener">
+          <Image src={kv} alt={p.kvAlt} widths={[640, 1024, 1440, 1672]} sizes="(max-width: 1300px) 100vw, 1240px" loading="eager" fetchpriority="high" />
+        </a>
+      </figure>
+    </div>
+  </section>
   <div class="wrap rows">
     <section class="row">
       <div class="row-label"><p class="kicker">{lang === 'ko' ? '어떤 쇼' : 'The show'}</p></div>
@@ -19,6 +45,17 @@ const p = c.podcast;
     <section class="row">
       <div class="row-label"><p class="kicker">{p.hostsTitle}</p></div>
       <div class="row-body"><div class="pillars" style="grid-template-columns:repeat(2,minmax(0,1fr))">{p.hosts.map((h) => <div class="pillar"><h3>{h.name}</h3><p>{h.text}</p></div>)}</div></div>
+    </section>
+    <section class="row">
+      <div class="row-label"><p class="kicker">{p.listen}</p></div>
+      <div class="row-body">
+        <ul class="linklist">
+          <li><a href={LINKS.youtubeLive} target="_blank" rel="noopener"><span class="name">{p.liveNote}</span><span class="where">youtube.com/@firesidechathq/live</span></a></li>
+          <li><a href={LINKS.youtube} target="_blank" rel="noopener"><span class="name">YouTube</span><span class="where">@firesidechathq</span></a></li>
+          <li><a href={LINKS.spotify} target="_blank" rel="noopener"><span class="name">Spotify</span><span class="where">open.spotify.com</span></a></li>
+          <li><a href={LINKS.apple} target="_blank" rel="noopener"><span class="name">{lang === 'ko' ? '애플 팟캐스트' : 'Apple Podcasts'}</span><span class="where">podcasts.apple.com</span></a></li>
+        </ul>
+      </div>
     </section>
   </div>
 </Base>

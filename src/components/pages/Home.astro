@@ -1,14 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Hedcut from '../Hedcut.astro';
 import Story from '../Story.astro';
-import SeasonIndex from '../SeasonIndex.astro';
 import PodcastBand from '../PodcastBand.astro';
 import Newsletter from '../Newsletter.astro';
 import FinalCta from '../FinalCta.astro';
 import { UI, ROUTES, type Lang } from '../../i18n';
 import { copy } from '../../i18n/copy';
-import { essays, season } from '../../lib/essays';
+import { essays } from '../../lib/essays';
 import { SITE, LINKS } from '../../site';
 
 interface Props { lang: Lang }
@@ -16,39 +14,45 @@ const { lang } = Astro.props;
 const t = UI[lang];
 const c = copy(lang);
 const h = c.home;
+const s = c.services;
 const latest = (await essays(lang)).slice(0, 3);
-const s1 = await season(lang, 's1');
-const serviceHref: Record<string, string> = { speaking: ROUTES.speaking[lang], advisory: ROUTES.advisory[lang], writing: ROUTES.writing[lang] };
+const serviceHref: Record<string, string> = {
+  ai: `${ROUTES.services[lang]}#${s.ai.id}`,
+  marketing: `${ROUTES.services[lang]}#${s.marketing.id}`,
+  speaking: ROUTES.speaking[lang],
+};
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'WebSite', name: 'ai storians', alternateName: ['aistorians', '에이스토리언즈'], url: SITE.url, inLanguage: lang },
-  { '@context': 'https://schema.org', '@type': 'Person', name: 'Jae Kim', alternateName: '제이킴모건', url: SITE.url + ROUTES.about.en, jobTitle: 'Writer and speaker', sameAs: [LINKS.substack, LINKS.brunch, LINKS.threads, LINKS.instagram, LINKS.x] },
+  { '@context': 'https://schema.org', '@type': 'Person', name: 'Jae Kim', alternateName: '제이킴모건', url: SITE.url + ROUTES.about.en, jobTitle: 'Writer and speaker', sameAs: [LINKS.substack, LINKS.morganLetter, LINKS.youtube, LINKS.brunch, LINKS.threads, LINKS.instagram, LINKS.x] },
 ];
 ---
 <Base lang={lang} title={c.meta.home.title} description={c.meta.home.description} path={ROUTES.home[lang]} alternates={{ en: ROUTES.home.en, ko: ROUTES.home.ko }} variant="front" jsonLd={jsonLd}>
   <section class="hero">
-    <div class="wrap grid">
-      <div class="hero-text">
-        <p class="kicker">{h.kicker}</p>
-        <h1 class="hero-headline">{h.headline}</h1>
-        <p class="hero-sub">{h.sub}</p>
-        <div class="hero-actions">
-          <a class="btn" href={ROUTES.contact[lang]}>{h.primary}</a>
-          <a class="arrow-link" href={ROUTES.writing[lang]}>{h.secondary}</a>
-        </div>
+    <div class="wrap">
+      <p class="kicker">{h.kicker}</p>
+      <h1 class="hero-headline">{h.headline.map((line) => <span>{line}</span>)}</h1>
+      <div class="hero-actions">
+        <a class="btn" href={ROUTES.contact[lang]}>{h.primary}</a>
+        <a class="arrow-link" href={ROUTES.writing[lang]}>{h.secondary}</a>
       </div>
-      <figure class="hero-portrait">
-        <Hedcut eager alt={lang === 'ko' ? '제이킴모건 점묘 초상' : 'Jae Kim, stipple portrait'} />
-      </figure>
     </div>
   </section>
 
-  <section class="proof" aria-label={lang === 'ko' ? '이력' : 'Credentials'}>
+  <nav class="channels" aria-label={t.elsewhere}>
     <div class="wrap">
       <ul>
-        {h.proof.map((p) => <li><span class="kicker kicker--ink">{p.label}</span><span class="t">{p.text}</span></li>)}
+        {h.links.map((x) => (
+          <li>
+            <a href={LINKS[x.key as keyof typeof LINKS]} target="_blank" rel="me noopener">
+              <span class="kicker kicker--ink">{x.label}</span>
+              <span class="t">{x.name}</span>
+              <span class="go" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
-  </section>
+  </nav>
 
   <section class="section latest">
     <div class="wrap">
@@ -65,28 +69,18 @@ const jsonLd = [
   <section class="section" style="padding-top:0">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="section-title">{h.whatIDo}</h2>
+        <h2 class="section-title"><a href={ROUTES.services[lang]}>{h.servicesTitle}</a></h2>
       </div>
       <div class="services">
-        {h.services.map((s, i) => (
+        {h.services.map((x, i) => (
           <div class="service">
             <span class="num">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{s.soon ? s.title : <a href={serviceHref[s.key]}>{s.title}</a>}</h3>
-            <p>{s.text}</p>
-            {s.soon ? <span class="soon">{s.soon}</span> : <a class="arrow-link" href={serviceHref[s.key]}>{s.link}</a>}
+            <h3><a href={serviceHref[x.key]}>{x.title}</a></h3>
+            <p>{x.text}</p>
+            <a class="arrow-link" href={serviceHref[x.key]}>{x.link}</a>
           </div>
         ))}
       </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="section-title">{h.season}</h2>
-        <p class="meta">{h.seasonSub}</p>
-      </div>
-      <SeasonIndex list={s1} lang={lang} />
     </div>
   </section>
 

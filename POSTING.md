@@ -12,14 +12,14 @@ title: "Own the Road"
 deck: "한 줄 요약. 검색 결과 설명으로도 쓰인다. 160자 안."
 date: 2026-10-15
 lang: en
-series: s1            # s1 (ai storians), investing (AI 시대를 읽는 투자), standalone (연재 밖)
-chapter: 7            # 연재 안 순서. standalone 이면 지운다
-cover: "./images/own-the-road/01_slack_teams.webp"   # 없으면 이 줄을 지운다. 남색 숫자 커버가 자동으로 그려진다
+ep: 7                 # ai storians 회차일 때만. 제목 앞에 "ai storians ep.7" 이 붙는다. 아니면 이 줄을 지운다
+cover: "./images/own-the-road/01_slack_teams.webp"   # 없으면 이 줄을 지운다. 남색 커버가 자동으로 그려진다
 coverAlt: ""
 ---
 ```
 
 3. 머리말 아래에 본문을 붙인다. 줄바꿈은 그대로 살아난다. 소제목은 `## 제목`.
+   - 순서는 date 가 정한다. 글 목록, 홈의 최근 글, 이전 글/다음 글 모두 날짜순(최신 먼저)이다. 시리즈나 시즌 칸은 없다.
 4. 그림: `src/content/essays/en/images/<slug>/` 에 넣고 본문에 `![](./images/<slug>/파일.webp)`. png, jpg 도 된다. 크기는 빌드가 알아서 줄인다.
 
 ## 2. 한국어 에세이

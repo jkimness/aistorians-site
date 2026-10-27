@@ -1,33 +1,33 @@
 ---
+import FireLogo from './FireLogo.astro';
 import { LINKS } from '../site';
 import { copy } from '../i18n/copy';
 import { UI, ROUTES, type Lang } from '../i18n';
-interface Props { lang: Lang; title?: string; text?: string; kicker?: string; linkToPage?: boolean }
-const { lang, linkToPage = true } = Astro.props;
+interface Props { lang: Lang }
+const { lang } = Astro.props;
 const c = copy(lang);
-const kicker = Astro.props.kicker ?? UI[lang].nav.podcast;
-const title = Astro.props.title ?? c.home.podcastTitle;
-const text = Astro.props.text ?? c.home.podcastText;
+const p = c.podcast;
 const bars = Array.from({ length: 64 }, (_, i) => 0.25 + 0.75 * Math.abs(Math.sin(i * 0.55) * Math.cos(i * 0.21)));
 ---
 <section class="night section">
   <div class="wrap pod">
     <div class="pod-text">
-      <p class="kicker">{kicker}</p>
-      <h2 class="pod-title">{linkToPage ? <a href={ROUTES.podcast[lang]}>{title}</a> : title}</h2>
-      <p class="pod-desc">{text}</p>
+      <p class="kicker">{UI[lang].nav.podcast}</p>
+      <h2 class="pod-title"><a href={ROUTES.podcast[lang]}><FireLogo /></a></h2>
+      <p class="pod-desc">{c.home.podcastText}</p>
       <div class="pod-links">
+        <a class="live" href={LINKS.youtubeLive} target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>{p.live}</a>
         <a href={LINKS.youtube} target="_blank" rel="noopener">{lang === 'ko' ? '유튜브' : 'YouTube'}</a>
         <a href={LINKS.spotify} target="_blank" rel="noopener">{lang === 'ko' ? '스포티파이' : 'Spotify'}</a>
         <a href={LINKS.apple} target="_blank" rel="noopener">{lang === 'ko' ? '애플 팟캐스트' : 'Apple Podcasts'}</a>
       </div>
     </div>
-    <a class="pod-screen" href={LINKS.youtubeUploads} target="_blank" rel="noopener" aria-label={c.podcast.watchLatest}>
+    <a class="pod-screen" href={LINKS.youtubeUploads} target="_blank" rel="noopener" aria-label={p.watchLatest}>
       <svg class="wave" viewBox="0 0 128 40" preserveAspectRatio="none" aria-hidden="true">
         {bars.map((b, i) => <rect x={i * 2} y={40 - b * 40} width="1.1" height={b * 40} fill="#f3eee4" />)}
       </svg>
       <span class="play" aria-hidden="true"></span>
-      <span class="cap"><span>{c.podcast.watchLatest}</span><span>{lang === 'ko' ? '수, 금' : 'Wed, Fri'}</span></span>
+      <span class="cap"><span>{p.watchLatest}</span><span>{lang === 'ko' ? '수, 금' : 'Wed, Fri'}</span></span>
     </a>
   </div>
 </section>
