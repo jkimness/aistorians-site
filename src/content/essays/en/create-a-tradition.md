@@ -5,7 +5,8 @@ date: 2026-09-23
 lang: en
 series: s1
 chapter: 4
-coverAlt: ""
+cover: "./images/create-a-tradition/cover-tradition.webp"
+coverAlt: "Tree rings with a measuring line, drawn in coral on navy"
 source: "https://www.aistorians.com/ai-storians/create-a-tradition"
 ---
 

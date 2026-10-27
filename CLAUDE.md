@@ -13,13 +13,14 @@
 - `npm run dev` 로컬 미리보기 (http://localhost:4321)
 - `npm run build` 정적 파일을 `dist/` 에 만든다. 이게 통과해야 배포한다.
 - `node scripts/make-preview.mjs` claude.ai 아티팩트 미리보기용 사본을 `preview/` 에 만든다 (배포용 아님).
+- 배포: main 에 푸시하면 GitHub Actions 가 GitHub Pages 로 올린다 (`.github/workflows/deploy.yml`). 처음 이전은 DEPLOY.md.
 
 ## 구조
 - 글: `src/content/essays/en/<slug>.md`, `src/content/essays/ko/<slug>.md`. 같은 파일 이름이면 한영 짝이다 (언어 토글과 hreflang 이 자동으로 이어진다).
 - 데일리 띵크: `src/content/thoughts/en/<slug>.md`
 - 글 스키마: `src/content.config.ts` (title, deck, date, lang, series s1 / investing / standalone, chapter, cover, coverAlt, draft)
 - 페이지 카피: `src/i18n/copy.ts` (카피 v2 원문, 2026-10-20 대표님 OK). UI 낱말: `src/i18n/index.ts`
-- 사이트 사실값 (채널 주소, 메일, 폼 주소): `src/site.ts`
+- 사이트 사실값 (채널 주소, 메일, Web3Forms 키): `src/site.ts`
 - 디자인 토큰과 전체 스타일: `src/styles/global.css`, 글 페이지: `src/styles/essay.css`
 - 페이지 틀: `src/components/pages/*.astro`, 주소 파일: `src/pages/`
 
@@ -42,10 +43,11 @@
 - 사이트 카피: 대시, 가운뎃점, 낫표 금지. 한국어 랜딩과 버튼은 존댓말, 에세이는 독백체.
 - 확인 안 된 수식어와 숫자 금지. 숫자는 실측된 것만.
 - 파사챗 페이지에 모건 레터 링크와 종목 이야기 금지. 에세이 본문에 파사챗, LK 언급 금지. LK 공개 범위는 카이스트 학석박사, 빅테크 반도체 엔지니어까지.
-- 새 카피는 `copy.ts` 에 `DRAFT` 주석을 달고 대표님 OK 를 받는다.
+- 새 카피는 `copy.ts` 에 `DRAFT` 주석을 달고 대표님 OK 를 받는다. OK 받은 줄은 `approved 날짜` 로 바꾼다.
+- 그림을 새로 만들 때: 실제 기사, 게시물, 사람을 흉내 낸 가짜 스크린샷이나 사진은 만들지 않는다. 표지 그림은 `scripts/covers.py` 처럼 브랜드 색 선화로.
 
 ## 하지 않는 것
-- DNS 의 MX, TXT 레코드는 절대 건드리지 않는다 (jkim@aistorians.com 메일). 사이트 이전 때도 A 레코드와 www CNAME 만 바꾼다.
+- DNS 의 기존 MX, TXT 레코드는 절대 건드리지 않는다 (jkim@aistorians.com 메일). 사이트 이전 때는 A 레코드와 www CNAME 만 바꾸고, 새 TXT 는 GitHub 도메인 인증 한 줄만 추가한다.
 - 분석 스크립트, 쿠키 배너는 묻기 전에 넣지 않는다.
 - 비밀값 커밋 금지.
 

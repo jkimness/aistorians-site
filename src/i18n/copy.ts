@@ -1,6 +1,7 @@
 // Page copy. Source of truth: vault "03 Site/aistorians.com 카피 v2.md" (approved 2026-10-20)
 // and "0 Aistorians Website - Content & Copy v1.md" (verified lines, marked v1).
-// Lines marked DRAFT are new and still need 대표님 OK.
+// New lines written for the site were approved by 대표님 on 2026-10-27 (marked 'approved 2026-10-27').
+// Mark any future new line DRAFT until it is approved.
 import type { Lang } from './index';
 
 export const COPY = {
@@ -144,12 +145,12 @@ export const COPY = {
       kicker: 'Podcast',
       title: 'FIRE사이드챗',
       lede: 'A Korean tech news show with an engineer. New episodes every Wednesday and Friday.',
-      // DRAFT: translated from strategy v1 3.5, needs OK
+      // approved 2026-10-27 (translated from strategy v1 3.5)
       about: 'A writer who reached financial independence and a semiconductor engineer talk about tech. Not a stock picking show. A tech news show.',
       hostsTitle: 'Hosts',
       hosts: [
         { name: 'Jae Kim', text: 'Writer of ai storians.' },
-        // DRAFT: inside the agreed disclosure (KAIST BS, MS, PhD; big tech semiconductor engineer)
+        // approved 2026-10-27, inside the agreed disclosure (KAIST BS, MS, PhD; big tech semiconductor engineer)
         { name: 'LK', text: 'KAIST BS, MS, and PhD. Semiconductor engineer at a big tech company.' },
       ],
       listen: 'Listen and watch',
@@ -279,7 +280,7 @@ export const COPY = {
     writing: {
       kicker: 'ai storians',
       title: '글',
-      // DRAFT: built from the approved speaker bio (2-5) and v1 playbook line
+      // approved 2026-10-27 (built from the approved speaker bio 2-5 and the v1 playbook line)
       lede: 'AI 를 만들지 않는 사람들에게 AI 가 무슨 뜻인지 쓰는 에세이. ai storians 는 10화로 완결됐다. 한 편에 하나의 명령. 이미 이기고 있는 사람들과 브랜드가 증명한다.',
       beyond: '연재 밖 글',
       koreanOnly: 'AI 시대를 읽는 투자',
@@ -293,7 +294,7 @@ export const COPY = {
       hostsTitle: '호스트',
       hosts: [
         { name: '제이킴모건', text: 'ai storians 작가.' },
-        // DRAFT: 공개 범위 안 (카이스트 학석박사, 빅테크 반도체 엔지니어)
+        // approved 2026-10-27, 공개 범위 안 (카이스트 학석박사, 빅테크 반도체 엔지니어)
         { name: 'LK', text: '카이스트 학사, 석사, 박사. 빅테크 반도체 엔지니어.' },
       ],
       listen: '듣고 보기',

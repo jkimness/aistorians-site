@@ -5,9 +5,10 @@ export const SITE = {
   author: { en: 'Jae Kim', ko: '제이킴모건' },
   email: 'jkim@aistorians.com',
   founded: 2026,
-  // Contact form endpoint. Until a form service is chosen (Formspree or Web3Forms
-  // free tier), the form falls back to opening the visitor's mail app.
-  formEndpoint: '',
+  // Contact form: Web3Forms (free). Get the key at https://web3forms.com with
+  // jkim@aistorians.com (the key arrives by email) and paste it here. The key is
+  // public by design. While it is empty, the form falls back to the visitor's mail app.
+  web3formsKey: '',
 };
 
 export const LINKS = {

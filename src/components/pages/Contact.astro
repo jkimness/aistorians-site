@@ -8,14 +8,24 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const c = copy(lang);
 const f = c.contact.fields;
-const action = SITE.formEndpoint || `mailto:${SITE.email}?subject=${encodeURIComponent(lang === 'ko' ? '강연 섭외 문의' : 'Speaking request')}`;
-const enctype = SITE.formEndpoint ? undefined : 'text/plain';
+const live = Boolean(SITE.web3formsKey);
+const subject = lang === 'ko' ? '강연 섭외 문의 (aistorians.com)' : 'Speaking request (aistorians.com)';
+const action = live ? 'https://api.web3forms.com/submit' : `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}`;
+const enctype = live ? undefined : 'text/plain';
+const thanks = SITE.url + (lang === 'ko' ? '/ko/contact-thanks' : '/contact-thanks');
 ---
 <Base lang={lang} title={c.meta.contact.title} description={c.meta.contact.description} path={ROUTES.contact[lang]} alternates={{ en: ROUTES.contact.en, ko: ROUTES.contact.ko }}>
   <PageHead kicker={c.contact.kicker} title={c.contact.title} lede={c.contact.lede} />
   <section class="section">
     <div class="wrap grid">
       <form class="form contact-form-col" method="post" action={action} enctype={enctype} style="grid-column:1 / span 8">
+        {live && <>
+          <input type="hidden" name="access_key" value={SITE.web3formsKey} />
+          <input type="hidden" name="subject" value={subject} />
+          <input type="hidden" name="from_name" value="aistorians.com" />
+          <input type="hidden" name="redirect" value={thanks} />
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+        </>}
         <div class="field"><label for="org">{f.org}</label><input id="org" name="organization" required autocomplete="organization" /></div>
         <div class="field"><label for="event">{f.event}</label><input id="event" name="event" required /></div>
         <div class="field"><label for="date">{f.date}</label><input id="date" name="date" required placeholder={lang === 'ko' ? '예: 2026년 12월 3일' : 'e.g. Dec 3, 2026'} /></div>

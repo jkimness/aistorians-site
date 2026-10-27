@@ -5,7 +5,8 @@ date: 2026-08-12
 lang: ko
 series: s1
 chapter: 1
-coverAlt: ""
+cover: "./images/we-are-all-historians-of-the-ai-age-ai-storians/cover-historians.webp"
+coverAlt: "지층과 그 사이를 뚫은 시추 코어를 그린 표지 그림"
 source: "Ep01 우리 모두가 AI시대의 역사학자다 브런치 발행본 (2026-10-14 수집).md"
 ---
 

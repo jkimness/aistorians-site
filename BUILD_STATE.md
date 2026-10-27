@@ -1,6 +1,6 @@
 # BUILD_STATE.md
 
-마지막 갱신: 2026-10-26 (Cowork 세션, 대표님 지시 "최고의 웹디자이너처럼 do whatever it takes")
+마지막 갱신: 2026-10-27 (Cowork 세션, 대표님 "make it happen")
 
 ## 한 일 (2026-10-26)
 - [x] 진단: 라이브 스퀘어스페이스 사이트와 v2 시안(코드 블록)은 둥근 버튼, 테두리 카드 3열, 네이비와 테라코타라서 흔한 랜딩 문법이었다.
@@ -10,16 +10,23 @@
 - [x] SEO 기본: 페이지별 title, description, canonical, hreflang 짝, Open Graph, JSON-LD (WebSite, Person, Article), sitemap, RSS 2개 (/rss.xml, /ko/rss.xml), robots.txt, 404.
 - [x] 미리보기 아티팩트 (비공개): https://claude.ai/artifact/9c72pfWu5D6SDYetgBGcCQ
 
-## 대표님 결정 대기
-| # | 결정 | 추천 |
+## 2026-10-27 대표님 답
+- 스퀘어스페이스에서 이 사이트로 옮긴다. 도메인은 그대로 (등록처 스퀘어스페이스 유지, 레코드만 변경, 메일 그대로).
+- 메뉴에 강연 넣는다 (이미 들어가 있음).
+- 새로 쓴 카피 OK (copy.ts 에 approved 2026-10-27 표시).
+- 빠진 그림은 "찾거나 만들어라": 커버가 없던 세 글에 브랜드 색(남색, 산호색, 크림색)으로 새 커버를 그렸다. 나이테 (Create a Tradition), 지층과 시추 코어 (We Are All Historians, KR 01화 포함), 톱니 지붕 공장과 토큰 연기 (Why Jensen). 원본 스크린샷과 본문 그림은 대표님 맥(Desktop, Downloads)에서 찾을 예정, 폴더 허락 대기.
+- 호스팅: GitHub Pages (무료, DNS 는 A 4줄과 www CNAME 만). 배포 파일 준비 끝: .github/workflows/deploy.yml, public/CNAME, scripts/postbuild.mjs.
+- 섭외 폼: Web3Forms 로 연결 (무료). Access Key 만 넣으면 켜진다 (src/site.ts). 감사 페이지 /contact-thanks, /ko/contact-thanks.
+- 한국어 12편: 이전 날 한 번에 공개 (추천안대로).
+
+## 남은 것
+| # | 일 | 누가 |
 |---|---|---|
-| 1 | 스퀘어스페이스에서 이 사이트로 옮길지 | 옮긴다. 디자인 천장, 한영 이중(hreflang), 발행 속도(마크다운 한 파일이면 끝, 화면 클릭 자동화 불필요), 비용 0원 호스팅 |
-| 2 | 호스팅 | GitHub Pages (DNS 는 A 레코드와 www CNAME 만 바꾼다. 메일 MX, TXT 는 그대로). 배포 직전에 최신 약관 확인 |
-| 3 | 섭외 폼 받는 곳 | 무료 폼 서비스 하나 (Formspree 또는 Web3Forms 류) 로 jkim@aistorians.com 에 받기. 정해지면 `src/site.ts` 의 formEndpoint 한 줄 |
-| 4 | 한국어 글 공개 방식 | 이전 날에 12편 한 번에 (사이트 이전은 새 발행이 아니라 이사). 하루 한 편 원칙을 지키려면 draft: true 로 숨겨 두고 하루 한 편씩 연다 |
-| 5 | 메뉴에 강연 넣을지 | 넣는다. 섭외가 1번 일이다. 11/5 자료(이력, 사진, 후기)가 오면 강연 페이지에 증거 칸을 채운다 |
-| 6 | DRAFT 카피 OK | `src/i18n/copy.ts` 의 DRAFT 주석 줄: 파사챗 소개 영문, LK 소개 (공개 범위 안), 한국어 글 페이지 머리말. 그 밖에 새로 쓴 짧은 낱말: 증거 줄 라벨 Series, Career, Show, 바닥글 콜로폰 한 줄 |
-| 7 | 투자 연재 slug | 임시로 money-arrives-first, marketplace-owners-win. 영문판이 생기면 그 slug 로 맞춘다 |
+| 1 | DEPLOY.md 1부: 코드 풀고 GitHub 저장소, Pages 배포 | 맥의 Claude Code (프롬프트 DEPLOY.md 에 있음) |
+| 2 | DEPLOY.md 2부: 스퀘어스페이스 DNS 다섯 줄 | 대표님 (10분) |
+| 3 | Web3Forms Access Key | 대표님 메일함 (1분) |
+| 4 | 원본 그림 찾기 (스크린샷 6, tradition 2~5, Jensen 본문 2, 데일리 띵크 3) | Claude, 맥 폴더 허락 뒤 |
+| 5 | 투자 연재 slug 확정 (임시 money-arrives-first, marketplace-owners-win) | 영문판 생길 때 |
 
 ## 빠진 그림 (볼트에 원본이 없어 이번에 못 넣음, 라이브 스퀘어스페이스에는 있다)
 - 영문: be-a-messenger 스크린샷 3, create-a-tradition tradition-1~5 (커버 포함), own-the-road 02_common_rare (영문판), we-are-all-historians 스크린샷 (커버), why-jensen 3장 (커버 포함), 데일리 띵크 3장
@@ -42,4 +49,4 @@
 7. aistorians-publish 스킬의 "웹사이트" 칸을 스퀘어스페이스 화면 작업에서 이 저장소 마크다운 추가로 바꾼다
 
 ## 다음 세션은
-대표님이 미리보기를 보고 준 피드백을 반영하거나, 1번 결정이 나면 "이전 순서" 1부터.
+DEPLOY.md 1부부터. 끝나면 2부를 대표님과 함께.

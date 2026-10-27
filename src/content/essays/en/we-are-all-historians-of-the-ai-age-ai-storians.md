@@ -5,7 +5,8 @@ date: 2026-08-27
 lang: en
 series: s1
 chapter: 1
-coverAlt: ""
+cover: "./images/we-are-all-historians-of-the-ai-age-ai-storians/cover-historians.webp"
+coverAlt: "Layers of rock with a core sample drawn through them"
 source: "https://www.aistorians.com/ai-storians/we-are-all-historians-of-the-ai-age-ai-storians"
 ---
 

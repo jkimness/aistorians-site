@@ -10,7 +10,7 @@ export default defineConfig({
   // keep the exact Squarespace URLs (/ai-storians/<slug>, no trailing slash)
   trailingSlash: 'never',
   build: { format: 'file' },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('contact-thanks') && !page.endsWith('/404') })],
   markdown: {
     remarkPlugins: [remarkBreaks],
     rehypePlugins: [rehypeFigure],

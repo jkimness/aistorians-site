@@ -5,7 +5,8 @@ date: 2026-09-02
 lang: ko
 series: s1
 chapter: 4
-coverAlt: ""
+cover: "./images/create-a-tradition/cover-tradition.webp"
+coverAlt: "나이테와 측정선을 그린 표지 그림"
 source: "Ep04 전통을 만들어라 브런치 발행본 (2026-10-14 수집).md"
 ---
 

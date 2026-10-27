@@ -4,7 +4,8 @@ deck: "Everyone in tech says data center. He says AI factory. That one word move
 date: 2026-09-23
 lang: en
 series: standalone
-coverAlt: ""
+cover: "./images/why-jensen-never-says-data-center-anymore/cover-ai-factory.webp"
+coverAlt: "A sawtooth factory whose chimney releases a stream of dots"
 source: "https://www.aistorians.com/ai-storians/why-jensen-never-says-data-center-anymore"
 ---
 

@@ -69,7 +69,7 @@ for (const f of html) {
     const head = (s.match(/<head>([\s\S]*?)<\/head>/) || [])[1] || '';
     const body = (s.match(/<body>([\s\S]*?)<\/body>/) || [])[1] || '';
     const keep = head.replace(/<meta charset="utf-8">/, '').replace(/<meta name="viewport"[^>]*>/, '');
-    s = keep + '\n' + body;
+    s = keep.replace(/<title>[^<]*<\/title>/, '<title>ai storians redesign</title>') + '\n' + body;
   }
   fs.writeFileSync(f, s);
 }

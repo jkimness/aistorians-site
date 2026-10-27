@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { ROUTES, UI, type Lang } from '../../i18n';
+import { copy } from '../../i18n/copy';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy(lang);
+const t = UI[lang];
+const path = lang === 'ko' ? '/ko/contact-thanks' : '/contact-thanks';
+---
+<Base lang={lang} title={`${c.contact.title} | ai storians`} description={c.contact.done} path={path} alternates={{ en: '/contact-thanks', ko: '/ko/contact-thanks' }} noindex>
+  <section class="section">
+    <div class="wrap grid">
+      <div style="grid-column:1 / span 8">
+        <p class="kicker">{c.contact.title}</p>
+        <h1 class="page-title" style="font-size:clamp(40px,5.6vw,76px)">{c.contact.done}</h1>
+        <p style="margin-top:32px;display:flex;gap:28px;flex-wrap:wrap">
+          <a class="arrow-link" href={ROUTES.home[lang]}>{t.goHome}</a>
+          <a class="arrow-link" href={ROUTES.writing[lang]}>{t.allEssays}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
