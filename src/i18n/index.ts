@@ -37,7 +37,7 @@ export const UI = {
     // ai storians episodes carry the episode in the title only, e.g. "ai storians ep.1"
     ep: (n: number) => `ai storians ep.${n}`,
     minRead: (n: number) => `${n} min read`,
-    latest: 'The latest',
+    latest: 'Latest essays', // DRAFT copy review
     allEssays: 'All essays',
     readOther: '한국어로 읽기',
     prev: 'Previous',
@@ -48,7 +48,7 @@ export const UI = {
     footerTagline: 'Know where the AI world is heading. Build your solution based on the future.',
     copyright: '© 2026 ai storians. All records kept.',
     colophon: 'Set in Newsreader, Noto Serif KR, Pretendard and JetBrains Mono.',
-    elsewhere: 'Elsewhere',
+    elsewhere: 'Follow', // DRAFT copy review
     sections: 'Sections',
     notFoundTitle: 'This page has no past.',
     notFoundBody: "And around here, things with no past don't survive.",

@@ -1,6 +1,6 @@
 # BUILD_STATE.md
 
-마지막 갱신: 2026-10-27 저녁 (Cowork 세션, 대표님 피드백 2차 반영)
+마지막 갱신: 2026-10-27 밤 (Cowork 세션, 영문 먼저, 영문 카피 전수 정리)
 
 ## 2026-10-27 피드백 2차 (반영 끝, 미리보기 Version 4)
 - 헤드컷 초상, 무대 사진, 바이라인 동그라미 사진을 모두 뺐다. 제이킴 사진은 소개 페이지 컬러 사진 한 장 (IG 소개 01 사진 크롭, `src/assets/jae-portrait.jpg`). 스퀘어스페이스 원본 "251115-프로필15853_보정" 은 볼트에 없어서 못 찾았다. 다르면 볼트에 넣어 주시면 바꾼다.
@@ -12,14 +12,23 @@
 - 문의 폼: 문의 종류 4개 (AI Business Integration, Advertising & Marketing, Speaking & Lectures, 기타). 강연을 고르면 행사 칸이 열린다. 이름, 이메일, 내용만 필수.
 - 기본 공유 카드(og-default.png)를 헤드컷 없이 다시 그렸다 (글자만, scripts/og.mjs).
 
-## DRAFT, 대표님 OK 필요 (copy.ts 에 DRAFT 표시)
-1. 한국어 헤드라인: "AI 세상이 어디로 가는지 먼저 읽으세요. / 그 미래를 기준으로 솔루션을 만드세요." (바닥글 문구로도 씀)
-2. Advertising & Marketing 카피 전부 (홈 카드, 서비스 페이지 소개, 문의 항목 3개, 버튼). 사실 근거는 승인된 이력 (에델만, 잭슨 도슨, 10년) 만 썼다.
-3. AI Business Integration 한국어판 (승인된 영어 Advisory 카피의 번역)
-4. 이름: Speaking & Lectures / 강연과 강의, 그리고 승인 문장에 lectures/강의 추가
-5. 일반 마무리 문구: "Have a project or an event in mind?" / "준비 중인 프로젝트나 행사가 있으신가요?" (강연 페이지는 기존 승인 문구 그대로)
-6. 문의 페이지 제목, 소개, 문의 종류 이름, "Tell me more / 문의 내용", 머리 버튼 "Contact / 문의하기"
-7. 서비스 페이지 소개, 글 페이지 소개, 메타 설명, "Live on YouTube / 유튜브 라이브"
+## 진행 방식: 영문 먼저 (대표님 2026-10-27)
+- 영문 레이아웃과 카피를 먼저 확정하고, 그다음 한국어를 번역한다. 그때까지 한국어 카피는 손대지 않는다 (지금 한국어 화면은 옛 번역이라 무시해도 된다).
+- 그래서 한국어 DRAFT 확인 요청 (헤드라인 번역 등) 은 보류. 번역 때 같이 고칠 것: 한국어 FAQ "예산 범위를 골라 주세요" (폼에 예산 칸이 없다), 한국어 마케팅 카드의 에델만 문장 (영문에서 뺐다).
+
+## 2026-10-27 저녁 대표님 수정 + 영문 카피 전수 정리 (미리보기 Version 5)
+- 대표님 지시: 마케팅 카드의 "Built on a decade of brand stories at Edelman and Jackson Dawson." 삭제 (서비스 페이지의 같은 문장도 삭제), Speaking & Lectures 를 Speaker & Lectures 로, 홈 히어로의 Read the essays 링크 삭제.
+- 영문 카피 전수 정리 (에세이 본문 제외): 쉬운 말, 짧은 문장, 같은 행동에는 같은 버튼 이름 (Get in touch). 사실과 숫자는 그대로. 바뀐 줄은 copy.ts 에 DRAFT copy review 표시.
+- 고친 사실 오류: 강연 FAQ "Share your budget range in the form" 인데 폼에 예산 칸이 없었다. "in your message" 로.
+
+## 영문 DRAFT, 대표님 OK 필요
+1. 버튼: Start a conversation 을 Get in touch 로 (홈, 서비스, 마무리)
+2. AI Business Integration 카드와 소개: "Put AI to work in your business..." / "AI is changing how customers find, trust, and remember a company..."
+3. Advertising & Marketing 카드, 소개, 항목 문구
+4. 서비스 항목 이름 Research for going global (옛 Global go-to-market research), 그 밖의 서비스 문장 다듬기
+5. 강연 FAQ 질문을 문장으로 (Where do you speak? 등), 소개 페이지 문단 다듬기, Why storians 의 "Drop the H." 삭제
+6. 문의: Message, Send message, 완료 문구 "within two business days"
+7. 뉴스레터 "New essays by email, once a week. Free.", 섹션 이름 Latest essays, 바닥글 Follow, 파사챗 소개 "co-hosted with a semiconductor engineer"
 
 
 ## 한 일 (2026-10-26)
@@ -47,7 +56,8 @@
 | 3 | Web3Forms Access Key | 대표님 메일함 (1분) |
 | 4 | 원본 그림 찾기 (스크린샷 6, tradition 2~5, Jensen 본문 2, 데일리 띵크 3) | Claude, 맥 폴더 허락 뒤 |
 | 5 | 투자 글 slug 확정 (임시 money-arrives-first, marketplace-owners-win) | 영문판 생길 때 |
-| 6 | 위 DRAFT 카피 OK | 대표님 |
+| 6 | 영문 DRAFT 카피 OK, 영문 레이아웃 확정 | 대표님 |
+| 7 | 확정된 영문으로 한국어 번역 | Claude, 6번 뒤 |
 
 ## 빠진 그림 (볼트에 원본이 없어 이번에 못 넣음, 라이브 스퀘어스페이스에는 있다)
 - 영문: be-a-messenger 스크린샷 3, create-a-tradition tradition-1~5 (커버 포함), own-the-road 02_common_rare (영문판), we-are-all-historians 스크린샷 (커버), why-jensen 3장 (커버 포함), 데일리 띵크 3장
@@ -70,4 +80,4 @@
 7. aistorians-publish 스킬의 "웹사이트" 칸을 스퀘어스페이스 화면 작업에서 이 저장소 마크다운 추가로 바꾼다
 
 ## 다음 세션은
-DRAFT 카피 OK 를 받고 approved 로 바꾼 뒤, DEPLOY.md 1부부터. 끝나면 2부를 대표님과 함께.
+영문 피드백을 마저 받아 영문을 확정하고 (copy.ts DRAFT 를 approved 로), 한국어를 번역한다. 그다음 DEPLOY.md 1부, 2부.
