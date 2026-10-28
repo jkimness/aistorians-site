@@ -1,6 +1,15 @@
 # BUILD_STATE.md
 
-마지막 갱신: 2026-10-27 밤 (Cowork 세션, 영문 먼저, 영문 카피 전수 정리)
+마지막 갱신: 2026-10-28 (Cowork 세션, 영문판 배포)
+
+## 2026-10-28 배포 (대표님: "이정도면 영문 홈페이지 바로 배포하자")
+- 영문 카피 OK 로 보고 copy.ts 영문 DRAFT 를 approved 2026-10-28 로 바꿨다. 한국어는 그대로 보류.
+- 영문만 공개: `site.config.json` 의 koLive 가 false. /ko 페이지, 언어 토글, 한국어로 읽기 링크, hreflang ko, sitemap 의 /ko 가 모두 빠진다. 공개 페이지 20개.
+- 저장소 https://github.com/jkimness/aistorians-site (공개, 브랜치 main). GitHub Pages, Source 는 GitHub Actions, Custom domain www.aistorians.com. 첫 배포 성공.
+- GitHub 상태 점검 (pages/health): www 는 아직 스퀘어스페이스를 가리킨다. 루트 도메인에 MX 가 있다 (메일, 그대로 둔다).
+- 다음: DNS (대표님, DEPLOY.md 2부), DNS 가 바뀌면 Claude 가 HTTPS 강제를 켜고 확인.
+- 스퀘어스페이스: 새 사이트가 열리는 것을 확인한 뒤 웹사이트 요금제만 해지한다 (자동 갱신 끄기). 도메인 aistorians.com 과 메일(구글 워크스페이스로 보임) 구독은 그대로 둔다. DNS 는 계속 스퀘어스페이스 도메인 설정에서 관리한다.
+
 
 ## 2026-10-27 피드백 2차 (반영 끝, 미리보기 Version 4)
 - 헤드컷 초상, 무대 사진, 바이라인 동그라미 사진을 모두 뺐다. 제이킴 사진은 소개 페이지 컬러 사진 한 장 (IG 소개 01 사진 크롭, `src/assets/jae-portrait.jpg`). 스퀘어스페이스 원본 "251115-프로필15853_보정" 은 볼트에 없어서 못 찾았다. 다르면 볼트에 넣어 주시면 바꾼다.
@@ -51,12 +60,14 @@
 ## 남은 것
 | # | 일 | 누가 |
 |---|---|---|
-| 1 | DEPLOY.md 1부: 코드 풀고 GitHub 저장소, Pages 배포 | 맥의 Claude Code (프롬프트 DEPLOY.md 에 있음) |
-| 2 | DEPLOY.md 2부: 스퀘어스페이스 DNS 다섯 줄 | 대표님 (10분) |
+| 1 | DEPLOY.md 1부: GitHub 저장소, Pages 배포 | 끝 (2026-10-28) |
+| 2 | DEPLOY.md 2부: 스퀘어스페이스 DNS 다섯 줄 (www CNAME 은 jkimness.github.io) | 대표님 (10분) |
+| 2a | DNS 뒤 HTTPS 강제 켜기, 라이브 확인 | Claude |
+| 2b | 스퀘어스페이스 웹사이트 요금제 해지 (도메인, 메일은 유지) | 대표님, 라이브 확인 뒤 |
 | 3 | Web3Forms Access Key | 대표님 메일함 (1분) |
 | 4 | 원본 그림 찾기 (스크린샷 6, tradition 2~5, Jensen 본문 2, 데일리 띵크 3) | Claude, 맥 폴더 허락 뒤 |
 | 5 | 투자 글 slug 확정 (임시 money-arrives-first, marketplace-owners-win) | 영문판 생길 때 |
-| 6 | 영문 DRAFT 카피 OK, 영문 레이아웃 확정 | 대표님 |
+| 6 | 영문 카피 OK (2026-10-28 배포로 확정). 남은 레이아웃 손질은 라이브 보면서 | 대표님 |
 | 7 | 확정된 영문으로 한국어 번역 | Claude, 6번 뒤 |
 
 ## 빠진 그림 (볼트에 원본이 없어 이번에 못 넣음, 라이브 스퀘어스페이스에는 있다)

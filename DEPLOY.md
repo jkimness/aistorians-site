@@ -6,7 +6,12 @@
 - GitHub 계정 (무료). GitHub Pages 무료 요금은 저장소가 공개여야 한다. 글은 어차피 공개라 괜찮고, 비밀값은 저장소에 두지 않는다.
 - 맥에 Node 22.23.4 이상 (24 권장)과 Claude Code.
 
-## 1부: 코드 풀고 GitHub 에 배포 (맥의 Claude Code 가 한다)
+## 1부: GitHub 에 배포 (끝, 2026-10-28)
+- 저장소: https://github.com/jkimness/aistorians-site (공개). main 에 푸시하면 Actions 가 빌드해서 Pages 로 올린다.
+- Pages: Source 는 GitHub Actions, Custom domain 은 www.aistorians.com. 첫 배포 성공 (Actions run 40630895147).
+- 2026-10-28 에는 대표님 컴퓨터의 Cowork 작업 공간에서 gh 로그인 (대표님 승인) 으로 만들고 푸시했다. 맥에서 이어 할 때는 `git clone https://github.com/jkimness/aistorians-site` 로 받는다.
+
+### (참고) 처음 계획했던 맥 Claude Code 순서
 터미널에서 `cd ~/Projects && claude` 로 열고 아래를 그대로 붙여 넣는다.
 
 ```
@@ -33,7 +38,7 @@
 | A | @ | 185.199.109.153 |
 | A | @ | 185.199.110.153 |
 | A | @ | 185.199.111.153 |
-| CNAME | www | (GitHub 사용자 이름).github.io |
+| CNAME | www | jkimness.github.io |
 
 선택: AAAA, @, 2606:50c0:8000::153 / 2606:50c0:8001::153 / 2606:50c0:8002::153 / 2606:50c0:8003::153
 
