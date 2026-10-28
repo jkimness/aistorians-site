@@ -91,4 +91,5 @@
 7. aistorians-publish 스킬의 "웹사이트" 칸을 스퀘어스페이스 화면 작업에서 이 저장소 마크다운 추가로 바꾼다
 
 ## 다음 세션은
+2026-10-28 인계: DNS 전환은 새 Claude Code 세션이 맥의 Aside 로 한다. 순서와 되돌리기는 볼트 `Aistorians/03 Site/2026-10-28 인계 aistorians.com DNS 전환.md`.
 영문 피드백을 마저 받아 영문을 확정하고 (copy.ts DRAFT 를 approved 로), 한국어를 번역한다. 그다음 DEPLOY.md 1부, 2부.
