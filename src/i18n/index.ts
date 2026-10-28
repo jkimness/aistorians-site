@@ -25,7 +25,7 @@ export const UI = {
   en: {
     htmlLang: 'en',
     nav: { writing: 'Writing', podcast: 'Podcast', services: 'Services', speaking: 'Speaking', about: 'About', home: 'Home', contact: 'Contact', thoughts: 'Daily thought' },
-    book: 'Contact', // DRAFT 2026-10-27 (header button, was 'Book Jae')
+    book: 'Contact', // approved 2026-10-28 (header button, was 'Book Jae')
     langName: 'English',
     otherLangName: '한국어',
     est: 'Est. 2026',
@@ -37,7 +37,7 @@ export const UI = {
     // ai storians episodes carry the episode in the title only, e.g. "ai storians ep.1"
     ep: (n: number) => `ai storians ep.${n}`,
     minRead: (n: number) => `${n} min read`,
-    latest: 'Latest essays', // DRAFT copy review
+    latest: 'Latest essays', // approved 2026-10-28
     allEssays: 'All essays',
     readOther: '한국어로 읽기',
     prev: 'Previous',
@@ -48,7 +48,7 @@ export const UI = {
     footerTagline: 'Know where the AI world is heading. Build your solution based on the future.',
     copyright: '© 2026 ai storians. All records kept.',
     colophon: 'Set in Newsreader, Noto Serif KR, Pretendard and JetBrains Mono.',
-    elsewhere: 'Follow', // DRAFT copy review
+    elsewhere: 'Follow', // approved 2026-10-28
     sections: 'Sections',
     notFoundTitle: 'This page has no past.',
     notFoundBody: "And around here, things with no past don't survive.",

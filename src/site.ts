@@ -1,4 +1,8 @@
 // Site-wide facts. Change a URL here and it changes everywhere.
+import siteConfig from '../site.config.json';
+
+// English first (대표님 2026-10-27): Korean goes live after the translation. Flip koLive in site.config.json.
+export const KO_LIVE: boolean = siteConfig.koLive;
 export const SITE = {
   name: 'ai storians',
   url: 'https://www.aistorians.com',

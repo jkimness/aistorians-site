@@ -4,6 +4,7 @@
 
 ## 무엇
 - aistorians.com 의 새 사이트. Astro 7 정적 사이트, 영어가 기본 주소, 한국어는 /ko 아래 짝 페이지.
+- 한국어 공개 스위치: `site.config.json` 의 `koLive`. 지금은 false (영문만 공개, 2026-10-28). false 면 /ko 페이지는 만들어지지만 postbuild 가 지우고, 언어 토글, 한국어 짝 링크, hreflang ko, sitemap 의 /ko 가 모두 빠진다. 한국어 번역이 끝나면 true 로 바꾼다.
 - 사이트의 1번 일: 제이킴(Jae Kim, 제이킴모건) 섭외. 글과 파사챗은 그 증거. (볼트 `Aistorians/00 Strategy/2026-10-20 aistorians.com 사이트 전략 v1.md`)
 - 디자인 방향 (대표님 지시): WSJ 스타일에 모더니즘 한 방울. 신문 1면 문법(마스트헤드, 괘선, 키커, 단 구분) 위에 12단 그리드, 악센트 색 하나.
 - 홈 헤드라인 (대표님 문장, 2026-10-27): "Know where the AI world is heading. Build your solution based on the future." 두 번째 문장은 악센트 색.
@@ -14,14 +15,14 @@
 - `npm run dev` 로컬 미리보기 (http://localhost:4321)
 - `npm run build` 정적 파일을 `dist/` 에 만든다. 이게 통과해야 배포한다.
 - `node scripts/make-preview.mjs` claude.ai 아티팩트 미리보기용 사본을 `preview/` 에 만든다 (배포용 아님).
-- 배포: main 에 푸시하면 GitHub Actions 가 GitHub Pages 로 올린다 (`.github/workflows/deploy.yml`). 처음 이전은 DEPLOY.md.
+- 배포: main 에 푸시하면 GitHub Actions 가 GitHub Pages 로 올린다 (`.github/workflows/deploy.yml`, 저장소 jkimness/aistorians-site). 처음 이전은 DEPLOY.md.
 
 ## 구조
 - 글: `src/content/essays/en/<slug>.md`, `src/content/essays/ko/<slug>.md`. 같은 파일 이름이면 한영 짝이다 (언어 토글과 hreflang 이 자동으로 이어진다).
 - 데일리 띵크: `src/content/thoughts/en/<slug>.md`
 - 글 스키마: `src/content.config.ts` (title, deck, date, lang, ep, cover, coverAlt, draft)
 - 시리즈 개념은 없다 (대표님 2026-10-27). 모든 글은 날짜순, 최신 먼저. ai storians 회차만 `ep: N` 을 넣고, 제목 앞에 "ai storians ep.N" 으로만 보인다 (`src/components/EpTitle.astro`). 시즌 목차, 화 번호 라벨, 연재별 묶음은 만들지 않는다.
-- 서비스: `/services`, `/ko/services`. AI Business Integration (옛 Advisory 내용), Advertising & Marketing, Speaking & Lectures. 강연 페이지 `/speaking` 은 따로 남는다. `/advisory` 는 없앴다.
+- 서비스: `/services`, `/ko/services`. AI Business Integration (옛 Advisory 내용), Advertising & Marketing, Speaker & Lectures. 강연 페이지 `/speaking` 은 따로 남는다. `/advisory` 는 없앴다.
 - 문의 폼: `/contact`. 문의 종류(라디오)를 고르고, 강연을 고르면 행사 칸이 열린다 (CSS `:has`, 자바스크립트 없음).
 - 페이지 카피: `src/i18n/copy.ts` (카피 v2 원문, 2026-10-20 대표님 OK). UI 낱말: `src/i18n/index.ts`
 - 사이트 사실값 (채널 주소, 메일, Web3Forms 키): `src/site.ts`

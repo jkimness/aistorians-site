@@ -3,6 +3,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 const dist = path.resolve('dist');
+
+// English first: while site.config.json has koLive false, the Korean pages are built but not published.
+const siteConfig = JSON.parse(fs.readFileSync(path.resolve('site.config.json'), 'utf8'));
+if (!siteConfig.koLive) {
+  for (const p of ['ko', 'ko.html']) fs.rmSync(path.join(dist, p), { recursive: true, force: true });
+  console.log('postbuild: Korean pages left out (koLive false)');
+}
 const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
 let n = 0;
 for (const f of walk(dist)) {

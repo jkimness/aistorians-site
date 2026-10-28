@@ -1,6 +1,7 @@
 ---
 import Wordmark from './Wordmark.astro';
 import { UI, ROUTES, NAV, otherLang, type Lang } from '../i18n';
+import { KO_LIVE } from '../site';
 
 interface Props { lang: Lang; path: string; alternates: Partial<Record<Lang, string>>; variant: 'front' | 'compact' }
 const { lang, path, alternates, variant } = Astro.props;
@@ -18,13 +19,15 @@ const langLinks = lang === 'en'
 ---
 {variant === 'front' && (
   <div class="front-top">
-    <div class="wrap topbar">
+    <div class:list={['wrap topbar', !KO_LIVE && 'topbar--solo']}>
       <span class="ear">{t.est}</span>
-      <nav class="langs" aria-label="Language">
-        {langLinks.map((x) => x.cur
-          ? <span aria-current="true" lang={x.l}>{x.label}</span>
-          : <a href={x.href} lang={x.l} hreflang={x.l}>{x.label}</a>)}
-      </nav>
+      {KO_LIVE && (
+        <nav class="langs" aria-label="Language">
+          {langLinks.map((x) => x.cur
+            ? <span aria-current="true" lang={x.l}>{x.label}</span>
+            : <a href={x.href} lang={x.l} hreflang={x.l}>{x.label}</a>)}
+        </nav>
+      )}
     </div>
     <div class="wrap"><hr class="hair" /></div>
     <div class="wrap nameplate">
@@ -42,11 +45,13 @@ const langLinks = lang === 'en'
       ))}
     </nav>
     <div class="nav-end">
-      <nav class="langs" aria-label="Language">
-        {langLinks.map((x) => x.cur
-          ? <span aria-current="true" lang={x.l}>{x.l === 'en' ? 'EN' : 'KR'}</span>
-          : <a href={x.href} lang={x.l} hreflang={x.l}>{x.l === 'en' ? 'EN' : 'KR'}</a>)}
-      </nav>
+      {KO_LIVE && (
+        <nav class="langs" aria-label="Language">
+          {langLinks.map((x) => x.cur
+            ? <span aria-current="true" lang={x.l}>{x.l === 'en' ? 'EN' : 'KR'}</span>
+            : <a href={x.href} lang={x.l} hreflang={x.l}>{x.l === 'en' ? 'EN' : 'KR'}</a>)}
+        </nav>
+      )}
       <a class="btn btn--sm" href={ROUTES.contact[lang]}>{t.book}</a>
       <details class="menu">
         <summary><span>{t.menu}</span><span class="bars" aria-hidden="true"></span></summary>
@@ -54,11 +59,13 @@ const langLinks = lang === 'en'
           <a class="mlink" href={home}>{t.nav.home}</a>
           {NAV.map((key) => <a class="mlink" href={ROUTES[key][lang]}>{t.nav[key]}</a>)}
           <div class="menu-foot">
-            <nav class="langs" aria-label="Language">
-              {langLinks.map((x) => x.cur
-                ? <span aria-current="true" lang={x.l}>{x.label}</span>
-                : <a href={x.href} lang={x.l} hreflang={x.l}>{x.label}</a>)}
-            </nav>
+            {KO_LIVE && (
+              <nav class="langs" aria-label="Language">
+                {langLinks.map((x) => x.cur
+                  ? <span aria-current="true" lang={x.l}>{x.label}</span>
+                  : <a href={x.href} lang={x.l} hreflang={x.l}>{x.label}</a>)}
+              </nav>
+            )}
             <a class="btn btn--sm" href={ROUTES.contact[lang]}>{t.book}</a>
           </div>
         </div>

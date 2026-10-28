@@ -5,24 +5,25 @@
 // until 대표님 OKs them. Unmarked lines are the 2026-10-20 approved copy.
 // 2026-10-27 evening: the whole English side went through a plain English copy review (대표님 request).
 // English first: the Korean block is frozen and will be retranslated from the final English.
+// 2026-10-28: 대표님 OK'd the English for launch ("이정도면 영문 홈페이지 바로 배포하자"), so the English DRAFT lines are approved 2026-10-28.
 import type { Lang } from './index';
 
 export const COPY = {
   en: {
     meta: {
-      home: { title: 'Jae Kim, AI speaker and writer of ai storians', description: 'Know where the AI world is heading. Build your solution based on the future. AI business integration, advertising and marketing, and talks by Jae Kim.' }, // description DRAFT
-      services: { title: 'Services, Jae Kim', description: 'AI business integration, advertising and marketing, and speaking. Three ways to work with Jae Kim.' }, // DRAFT
+      home: { title: 'Jae Kim, AI speaker and writer of ai storians', description: 'Know where the AI world is heading. Build your solution based on the future. AI business integration, advertising and marketing, and talks by Jae Kim.' }, // description approved 2026-10-28
+      services: { title: 'Services, Jae Kim', description: 'AI business integration, advertising and marketing, and speaking. Three ways to work with Jae Kim.' }, // approved 2026-10-28
       speaking: { title: 'Speaking, Jae Kim', description: 'Talks on AI, records, trust, and judgment for teams, leaders, and client events. In Korean or English.' },
-      contact: { title: 'Contact Jae Kim', description: 'AI business integration, advertising and marketing, speaking and lectures. Tell me what you have in mind.' }, // DRAFT
+      contact: { title: 'Contact Jae Kim', description: 'AI business integration, advertising and marketing, speaking and lectures. Tell me what you have in mind.' }, // approved 2026-10-28
       about: { title: 'About Jae Kim', description: 'Writer of ai storians, former PR strategist at Edelman, co-host of FIRE사이드챗.' },
-      writing: { title: 'Writing, ai storians', description: "Weekly essays on what AI means for the people who don't build it. In English and Korean, newest first." }, // DRAFT
+      writing: { title: 'Writing, ai storians', description: "Weekly essays on what AI means for the people who don't build it. In English and Korean, newest first." }, // approved 2026-10-28
       podcast: { title: 'FIRE사이드챗, the podcast', description: 'A Korean tech news show, co-hosted with a semiconductor engineer. New episodes every Wednesday and Friday.' },
     },
     home: {
       kicker: 'Jae Kim',
       // approved 2026-10-27 (대표님 wording). The second sentence is set in the accent color.
       headline: ['Know where the AI world is heading.', 'Build your solution based on the future.'],
-      primary: 'Get in touch', // DRAFT copy review 2026-10-27 (was 'Start a conversation')
+      primary: 'Get in touch', // approved 2026-10-28 (was 'Start a conversation')
       // approved 2026-10-27: links only
       links: [
         { key: 'youtube', label: 'YouTube', name: '@firesidechathq' },
@@ -31,33 +32,33 @@ export const COPY = {
       ],
       servicesTitle: 'Services', // approved 2026-10-27 (was 'What I do')
       services: [
-        // DRAFT copy review 2026-10-27: plain English, matched to the three things the service does
+        // approved 2026-10-28: plain English, matched to the three things the service does
         { key: 'ai', title: 'AI Business Integration', text: 'Put AI to work in your business. I help leadership teams define their story for the AI era, build AI content systems a small team can run, and research new markets.', link: 'See how it works' },
-        // DRAFT (Edelman sentence removed by 대표님 2026-10-27)
+        // approved 2026-10-28 (Edelman sentence removed by 대표님 2026-10-27)
         { key: 'marketing', title: 'Advertising & Marketing', text: 'Advertising, sponsorship, and partnership inquiries. Plus marketing consulting for your brand.', link: 'See the options' },
-        // title by 대표님 2026-10-27 ('Speaker & Lectures'); text DRAFT
+        // title by 대표님 2026-10-27 ('Speaker & Lectures'); text approved 2026-10-28
         { key: 'speaking', title: 'Speaker & Lectures', text: "Keynotes, lectures, and workshops on what AI changes and what it never will. For teams, leaders, and clients who don't build AI but have to work with it.", link: 'See the talks' },
       ],
       podcastTitle: 'FIRE사이드챗',
       podcastText: 'A Korean tech news show, co-hosted with a semiconductor engineer. New episodes every Wednesday and Friday.',
-      // DRAFT: the general call, now that services are more than speaking
+      // approved 2026-10-28: the general call, now that services are more than speaking
       finalTitle: 'Have a project or an event in mind?',
       finalText: "Tell me what you need. I'll reply within two business days.",
       finalButton: 'Get in touch',
     },
     newsletter: {
       lines: ['Information is cheap. Access is nearly free.', 'Interpretation is expensive. Trust is the most expensive.'],
-      sub: 'New essays by email, once a week. Free.', // DRAFT copy review
+      sub: 'New essays by email, once a week. Free.', // approved 2026-10-28
       button: 'Subscribe free',
     },
     services: {
       kicker: 'Jae Kim',
       title: 'Services',
-      lede: 'Three ways to work with me. Each starts with the same question: where is the AI world heading, and what should you build for it?', // DRAFT
+      lede: 'Three ways to work with me. Each starts with the same question: where is the AI world heading, and what should you build for it?', // approved 2026-10-28
       ai: {
         id: 'ai-business-integration',
         title: 'AI Business Integration',
-        // from the approved Advisory page (2026-10-20), reworded in the copy review: DRAFT
+        // from the approved Advisory page (2026-10-20), reworded in the copy review: approved 2026-10-28
         lede: 'AI is changing how customers find, trust, and remember a company. I help leadership teams put AI to work: define the story, build the content system, and research new markets.',
         helpTitle: 'What I help with',
         help: [
@@ -80,7 +81,7 @@ export const COPY = {
       marketing: {
         id: 'advertising-marketing',
         title: 'Advertising & Marketing',
-        // DRAFT
+        // approved 2026-10-28
         lede: 'Advertising, sponsorship, and partnership inquiries. Plus marketing consulting for brands that want to be found and trusted in the AI era.',
         asksTitle: 'What you can ask about',
         asks: [
@@ -128,15 +129,15 @@ export const COPY = {
     },
     contact: {
       kicker: 'Jae Kim',
-      title: 'Contact', // DRAFT (was 'Book Jae')
-      lede: 'Tell me what you have in mind. I read every message myself.', // DRAFT
-      typeLabel: 'What is this about?', // DRAFT
+      title: 'Contact', // approved 2026-10-28 (was 'Book Jae')
+      lede: 'Tell me what you have in mind. I read every message myself.', // approved 2026-10-28
+      typeLabel: 'What is this about?', // approved 2026-10-28
       types: { ai: 'AI Business Integration', marketing: 'Advertising & Marketing', speaking: 'Speaker & Lectures', other: 'Something else' },
-      speakingTitle: 'For speaking requests', // DRAFT
+      speakingTitle: 'For speaking requests', // approved 2026-10-28
       fields: {
         org: 'Organization', event: 'Event name', date: 'Date', location: 'Location or online', audience: 'Audience size and who they are',
         language: 'Language', ko: 'Korean', en: 'English', name: 'Name', email: 'Email', phone: 'Phone',
-        message: 'Message', // DRAFT
+        message: 'Message', // approved 2026-10-28
       },
       optional: 'optional',
       button: 'Send message',
@@ -172,7 +173,7 @@ export const COPY = {
     writing: {
       kicker: 'ai storians',
       title: 'Writing',
-      lede: "Weekly essays on what AI means for the people who don't build it. In English and Korean, newest first.", // DRAFT
+      lede: "Weekly essays on what AI means for the people who don't build it. In English and Korean, newest first.", // approved 2026-10-28
     },
     podcast: {
       kicker: 'Podcast',
@@ -189,7 +190,7 @@ export const COPY = {
       listen: 'Listen and watch',
       watchLatest: 'Watch the latest episode',
       live: 'Live', // approved 2026-10-27 ('라이브')
-      liveNote: 'Live on YouTube', // DRAFT
+      liveNote: 'Live on YouTube', // approved 2026-10-28
       kvAlt: 'FIRE사이드챗 illustration: the two hosts in armchairs by a fireplace',
       inKorean: 'The show is in Korean.',
     },

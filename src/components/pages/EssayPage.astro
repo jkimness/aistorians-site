@@ -9,7 +9,7 @@ import Newsletter from '../Newsletter.astro';
 import { UI, ROUTES, essayPath, otherLang, type Lang } from '../../i18n';
 import { copy } from '../../i18n/copy';
 import { slugOf, pairOf, essays, plainTitle, readingMinutes, type Essay } from '../../lib/essays';
-import { SITE } from '../../site';
+import { SITE, KO_LIVE } from '../../site';
 
 interface Props { e: Essay; lang: Lang }
 const { e, lang } = Astro.props;
@@ -49,7 +49,7 @@ const jsonLd = {
           <div class="who">{t.by} <a href={ROUTES.about[lang]}>{t.author}</a></div>
           <div class="meta meta-row"><time datetime={d.date.toISOString()}>{t.dateFmt(d.date)}</time><span>{t.minRead(mins)}</span></div>
         </div>
-        {pair && <a class="pair" href={essayPath(otherLang(lang), slug)} hreflang={otherLang(lang)} lang={otherLang(lang)}>{t.readOther}</a>}
+        {pair && KO_LIVE && <a class="pair" href={essayPath(otherLang(lang), slug)} hreflang={otherLang(lang)} lang={otherLang(lang)}>{t.readOther}</a>}
       </div>
     </header>
 
