@@ -8,6 +8,12 @@
 
 )
 
+## 2026-10-31 Site Desk, later the same night (Grok Bot)
+- Merged and live: a short definition and a few questions now sit after five essays (We Are All Historians, Create a Tradition, Be a Host, Why Jensen, Be a Messenger). Each page also carries FAQ data for search that matches the visible text. Essay text did not change, except the next line.
+- Be a Messenger: two FAQ answers at the end of the essay were reworded with your OK, so they only say what the essay says.
+- Checks done: build passes, FAQ data matches the page on all five, every page, link and image works, no Squarespace links. Live: all five essays, home, rss.xml (all links 200), sitemap (20 pages), robots.txt return 200. Plain http also opens the site.
+- Still open (no change): Web3Forms key, Search Console and Naver sitemap, GitHub domain check TXT record, Korean translation (including the new labels Definition and Questions), missing images, Squarespace plan cancel (you do this one).
+
 ## 2026-10-28 배포 (대표님: "이정도면 영문 홈페이지 바로 배포하자")
 - 영문 카피 OK 로 보고 copy.ts 영문 DRAFT 를 approved 2026-10-28 로 바꿨다. 한국어는 그대로 보류.
 - 영문만 공개: `site.config.json` 의 koLive 가 false. /ko 페이지, 언어 토글, 한국어로 읽기 링크, hreflang ko, sitemap 의 /ko 가 모두 빠진다. 공개 페이지 20개.
