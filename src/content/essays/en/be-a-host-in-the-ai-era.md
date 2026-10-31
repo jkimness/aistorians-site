@@ -7,6 +7,18 @@ ep: 3
 cover: "./images/be-a-host-in-the-ai-era/01.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/be-a-host-in-the-ai-era"
+definition:
+  term: "Host"
+  text: "The one who gathers people. If the messenger is the one who speaks, the host is the messenger of physical space."
+faq:
+  - q: "Why is the host the new influencer?"
+    a: "Followers and likes keep getting cheaper as AI supplies endless content. Showing up in person cannot be copied or automated. In the host economy, power is members and attendance rate."
+  - q: "Why can a host not be replaced by AI?"
+    a: "A host carries trust and accountability under their own name. Who comes, what gets said, and what happens all carry the host’s signature."
+  - q: "What skills does a host need?"
+    a: "Leadership, communication, coaching, an eye for detail, the warmth to make every guest feel at ease, a nerdy obsession worth building a gathering around, and most important, curation."
+  - q: "How do I start becoming a host?"
+    a: "Start small. Your first gathering can be modest. What matters is that there is a second one."
 ---
 
 There is one event that gathers more wealthy people in one place than any other on Earth.

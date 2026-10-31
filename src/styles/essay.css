@@ -93,3 +93,10 @@
   .chapter-nav a + a, .chapter-nav .next { border-left: 0; border-top: 1px solid var(--hair); padding-left: 0; text-align: left; }
   .article-lead { padding-inline: 0; }
 }
+
+/* Definition and FAQ after the essay (site desk 2026-10-31, draft). Rules only, existing tokens. */
+.answers { max-width: calc(var(--col) + 2 * var(--pad)); margin: clamp(36px, 5vw, 56px) auto 0; padding-inline: var(--pad); display: grid; gap: 32px; }
+.answers section { padding-top: 16px; border-top: 1px solid var(--rule); }
+.answers p { font: 400 17px/1.6 var(--serif); color: var(--ink-2); margin-top: 10px; }
+.answers details { border-bottom: 1px solid var(--hair); padding-block: 14px; }
+.answers summary { cursor: pointer; font: 600 18px/1.35 var(--serif); color: var(--ink); }

@@ -7,6 +7,18 @@ ep: 1
 cover: "./images/we-are-all-historians-of-the-ai-age-ai-storians/cover-historians.webp"
 coverAlt: "Layers of rock with a core sample drawn through them"
 source: "https://www.aistorians.com/ai-storians/we-are-all-historians-of-the-ai-age-ai-storians"
+definition:
+  term: "ai storian"
+  text: "A person who turns records into stories. AI reads our history, and the storian makes that history their own story."
+faq:
+  - q: "Why is AI built on history?"
+    a: "AI is trained on the past. It reads decades of human writing on the internet, again and again, to predict what comes next."
+  - q: "What does the P in GPT stand for?"
+    a: "Pre-trained. GPT stands for Generative Pre-trained Transformer. It is trained in advance on everything humanity has recorded so far."
+  - q: "Why are we all historians of the AI age?"
+    a: "Every prompt you type, every post you write, and every photo you upload creates new data. That is new history, and we all write it every day."
+  - q: "What will I get from reading ai storians?"
+    a: "Three things. The list of things AI cannot do. A lens for reading trends, industries, and investments one step earlier. And how to use AI while staying the one thing it cannot generate."
 ---
 
 Prologue:

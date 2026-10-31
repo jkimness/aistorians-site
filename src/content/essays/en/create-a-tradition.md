@@ -7,6 +7,18 @@ ep: 4
 cover: "./images/create-a-tradition/cover-tradition.webp"
 coverAlt: "Tree rings with a measuring line, drawn in coral on navy"
 source: "https://www.aistorians.com/ai-storians/create-a-tradition"
+definition:
+  term: "Tradition"
+  text: "The thing you repeat while everyone else pivots. Stack it for ten years and it becomes an asset nobody can copy."
+faq:
+  - q: "Why is the Masters a lesson for the AI era?"
+    a: "It is the hardest to access, the most analog, and the most stubborn about its traditions of any tournament. The more AI floods the world with copies, the more those things are worth."
+  - q: "Why can AI not build a Masters?"
+    a: "AI learns from data, and data is the average of the past. So its advice moves toward best practices: sell ads, raise prices, open an online store, allow phones. The moment the Masters follows that advice, it loses its value."
+  - q: "Why does scarcity grow in the AI era?"
+    a: "Scarcity is relative. AI supplies near infinite digital copies, so anything finite rises in value. The only scarcity AI cannot fake is physical: a gate you walk through, a week that opens once a year."
+  - q: "How do I create a tradition?"
+    a: "Repeat the same thing, the same way, and let it evolve. Write. Film. Publish. If nothing else, keep a diary. Make an annual, monthly, or weekly event that people wait for."
 ---
 
 What if I told you there is a sports *brand* that refuses to make more money and go viral?
