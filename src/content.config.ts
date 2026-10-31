@@ -21,6 +21,13 @@ const essays = defineCollection({
       coverAlt: z.string().default(''),
       source: z.string().optional(),           // where the text came from (provenance, not shown)
       draft: z.boolean().default(false),
+      // Optional answer blocks, shown after the essay body (the body itself is never edited).
+      // definition: the concept the essay coins, in one sentence from the essay's own words.
+      definition: z.object({ term: z.string(), text: z.string() }).optional(),
+      // faq: questions the essay itself answers. Also emitted as FAQPage JSON-LD (same text).
+      faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+      // faqInBody: the essay body already shows these Q&As, so emit JSON-LD only (no second visible list).
+      faqInBody: z.boolean().default(false),
     }),
 });
 

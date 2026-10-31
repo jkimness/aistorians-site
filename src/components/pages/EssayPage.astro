@@ -31,12 +31,19 @@ const bio = copy(lang).speaking.bio;
 const plain = plainTitle(d);
 const pageTitle = d.ep != null ? plain : `${d.title} | ai storians`;
 const og = d.cover ? (await getImage({ src: d.cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' })).src : '/og-default.png';
-const jsonLd = {
+const article = {
   '@context': 'https://schema.org', '@type': 'Article', headline: plain, description: d.deck,
   datePublished: d.date.toISOString(), inLanguage: lang, mainEntityOfPage: SITE.url + path,
   author: { '@type': 'Person', name: 'Jae Kim', alternateName: '제이킴모건', url: SITE.url + ROUTES.about.en },
   publisher: { '@type': 'Organization', name: 'ai storians', url: SITE.url },
 };
+// FAQPage uses the exact visible Q&A text (or the body's own FAQ when faqInBody).
+const faq = d.faq;
+const faqLd = faq.length ? {
+  '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: lang, url: SITE.url + path,
+  mainEntity: faq.map((x) => ({ '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: x.a } })),
+} : null;
+const jsonLd = faqLd ? [article, faqLd] : article;
 ---
 <Base lang={lang} title={pageTitle} description={d.deck || d.title} path={path} alternates={alternates} type="article" image={og} jsonLd={jsonLd}>
   <div class="progress" aria-hidden="true"></div>
@@ -63,6 +70,28 @@ const jsonLd = {
       <Content />
     </div>
     <div class="endmark" aria-hidden="true"><span></span></div>
+
+    {(d.definition || (faq.length > 0 && !d.faqInBody)) && (
+      <aside class="answers" lang={lang}>
+        {d.definition && (
+          <section class="definition">
+            <h2 class="kicker">Definition</h2>
+            <p><strong>{d.definition.term}</strong>: {d.definition.text}</p>
+          </section>
+        )}
+        {faq.length > 0 && !d.faqInBody && (
+          <section class="faq">
+            <h2 class="kicker">Questions</h2>
+            {faq.map((x) => (
+              <details>
+                <summary>{x.q}</summary>
+                <p>{x.a}</p>
+              </details>
+            ))}
+          </section>
+        )}
+      </aside>
+    )}
 
     <footer class="article-end">
       {(prev || next) && (

@@ -6,6 +6,18 @@ lang: en
 cover: "./images/why-jensen-never-says-data-center-anymore/cover-ai-factory.webp"
 coverAlt: "A sawtooth factory whose chimney releases a stream of dots"
 source: "https://www.aistorians.com/ai-storians/why-jensen-never-says-data-center-anymore"
+definition:
+  term: "AI factory"
+  text: "Jensen Huang’s word for a data center. A building that produces tokens and intelligence, judged by what it earns, not what it costs."
+faq:
+  - q: "Why does Jensen Huang say AI factory instead of data center?"
+    a: "A data center sounds like storage, so you ask how big and how cheap. A factory produces, so you ask what it makes and what it earns. Same building. The word changes the question, and the question decides the budget."
+  - q: "What does compute is revenue mean?"
+    a: "It is a line Jensen repeats like a mantra. Compute is not a cost. It is sales. So the building is not a data center. It is a factory."
+  - q: "Why does the word matter to investors?"
+    a: "A cost center is nearly impossible to finance. A factory has output, a tenant, and residual value. That is a grammar banks have understood since 1814."
+  - q: "How does the AI factory connect to American manufacturing?"
+    a: "An AI factory has no labor bill. Its costs are capital, chips, power, and land, and the essay argues America can win on every one. That lets the AI factory fit the promise to bring manufacturing home."
 ---
 
 > “The next industrial revolution has begun...  

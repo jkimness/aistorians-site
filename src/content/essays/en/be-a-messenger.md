@@ -7,6 +7,16 @@ ep: 2
 cover: "./images/be-a-messenger/thumbnail-messenger-is-the-message.webp"
 coverAlt: ""
 source: "https://www.aistorians.com/ai-storians/be-a-messenger"
+faqInBody: true
+faq:
+  - q: "Why are CEOs going on social media?"
+    a: "As AI makes information abundant, a CEO’s name and face create trust and accountability around the message. Jensen Huang and Satya Nadella show how leaders become messengers when people need a human answer for the direction of technology."
+  - q: "What can AI not replace?"
+    a: "AI cannot replace Human Capital: a human we can trust, who will answer for the outcome. It can generate content, but it cannot generate a lived reputation or accountability."
+  - q: "How do I start becoming a messenger?"
+    a: "Put your name and face behind what you know, publish consistently, and answer for the results. Start with one clear point of view and build a feedback loop with the people you serve."
+  - q: "What is an AI user vs an AI consumer?"
+    a: "AI users assign jobs to models, control errors, and build feedback loops; AI consumers make small talk with chatbots. The user treats AI as a tool to direct and evaluate, not as an answer machine."
 ---
 
 > “The medium is the message.”  
