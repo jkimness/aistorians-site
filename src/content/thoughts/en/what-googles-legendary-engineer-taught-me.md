@@ -28,6 +28,10 @@ That’s *people*.
 
 Before I explain why this matters, I want you to read the email Jeff Dean sent out. It’s long. But this email has everything. Far better than what I can offer.
 
+![](./images/what-googles-legendary-engineer-taught-me/01_email.webp)
+
+![](./images/what-googles-legendary-engineer-taught-me/02_email.webp)
+
   
 
 Jeff Dean, the author of this email, is a legend.
@@ -83,6 +87,8 @@ Discovery Loop: a public benefit corporation that wants to automate scientific a
 A 58-year-old legend decided he wanted to try “something new, in a smaller setting,” and became a founder.
 
 Sundar Pichai and Alphabet, instead of making a scene to keep him, chose to become a founding investor and Cloud partner. Pichai congratulated him publicly: “It’s been a privilege to work with Jeff and Sanjay.”
+
+![](./images/what-googles-legendary-engineer-taught-me/03_pichai.webp)
 
   
 

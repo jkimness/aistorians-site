@@ -43,11 +43,15 @@ Except the waiting list for tickets closed in the 1970s. It has never reopened. 
 
 The Masters Tournament. A golf event that started in 1934.
 
+![](./images/create-a-tradition/tradition-1.webp)
+
 Why does a letter about AI talk about a golf tournament? Hear me out.
 
 In an era where AI is replacing everything, this old, analog, stubborn tournament isn’t going anywhere. Rather, it is pulling away from the other three majors and becoming the most precious event in golf. And this needs to be studied. So I did it for you.
 
 The 2025 final round of the Masters peaked at 19.5 million viewers, the best since 2018. The other three majors draw 4 to 6 million for their finales. You have to add all three together to approach the Masters. And the Masters doesn’t even spread its broadcast across multiple networks.
+
+![](./images/create-a-tradition/tradition-2.webp)
 
 On Google Trends, averaged over the last 22 years, the Masters alone matches the other three majors combined. **The gap widens every year.**
 
@@ -85,6 +89,8 @@ It looks insane. The entire business of sports is built on selling broadcast rig
 
 Watch how detailed that control goes. At Augusta, nearly everything you can see is green.
 
+![](./images/create-a-tradition/tradition-3.webp)
+
 (image: @themasters)
 
 The trash cans are green. The trash bags inside them are green. The camera towers are green. The folding chairs are green. Even the sandwich wrappers are green, so a dropped one disappears into the grass instead of showing up on TV.
@@ -118,6 +124,8 @@ You can’t just join the Masters. And you can’t just buy it.
 The half-century waiting list, you already know. It doesn’t stop there. Players get in by invitation only. Attendance figures are never published. The membership list is kept secret.
 
 And then, the **phones**. It’s 2026, yet the Masters still bans phones at the gate. While every conference, tournament, and event on Earth chases maximum viral reach, the Masters walks the other way. Every other tournament, you will see phones, everywhere.
+
+![](./images/create-a-tradition/tradition-4.webp)
 
 Every access point restricted. Every access point controlled by the Masters.
 
@@ -168,6 +176,8 @@ The real reason people are crazy about the Masters is tradition. And this is the
 On Wednesday, the day before the tournament, Augusta holds the Par 3 Contest. The best players on the planet dress their small children in caddie jumpsuits and walk the course holding their hands. A day where family, not competition, is the point.
 
 The caddies all wear white jumpsuits. The champion receives the green jacket. Since 1949. The person who helps the new champion into it is last year’s champion. Also tradition. And the champion hosts the next year’s Champions Dinner.
+
+![](./images/create-a-tradition/tradition-5.webp)
 
 (image: BBC Sport)
 

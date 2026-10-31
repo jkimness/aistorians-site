@@ -60,6 +60,8 @@ Planning a trip with ChatGPT. Asking it for your horoscope. Running translations
 
 Don’t take my word for it. OpenAI teamed up with economists, analyzed the messages of 700 million users, and published the results itself. About 80% of ChatGPT usage was advice, information lookup, and writing.
 
+![](./images/be-a-messenger/01_openai_usage.webp)
+
 The share of work-related messages actually fell from 47% to 27% in a single year. OpenAI admitted, in its own study, what most of us suspected: people didn’t build systems with AI. They got a chatbot that suits them.
 
 The real 0.1% moves differently. They know each model has its own character and strengths. They assign different jobs to different models, optimize token spend, control for errors, and design feedback loops that tighten the system until the output is exactly what they wanted.
@@ -144,6 +146,8 @@ And the people proving it in real time are the people building the AI era with t
 
 July 24, 2026. Jensen Huang opened an X account.
 
+![](./images/be-a-messenger/02_jensen_x.webp)
+
 This is a man who ran a company for more than 30 years without touching social media. While the CEOs of Intel and AMD posted busily for years, he alone stayed silent. That man collected 10,000 followers within 20 minutes of showing up. And his first post wasn’t a product ad. It was a policy letter on why open models matter.
 
 The CEO of one of the most valuable companies on Earth decided, now, to start speaking directly.  
@@ -173,6 +177,8 @@ These are people who literally do not need the money. And yet here they are, try
 Once you notice the current, the next story becomes impossible to wave off.
 
 **4\. The Burger Battle**
+
+![](./images/be-a-messenger/03_burger_battle.webp)
 
 In February, the CEO of McDonald’s posted an Instagram video of himself eating a new burger. He took a bite so small, and kept calling the burger “the product,” that the entire internet turned him into a punchline.
 

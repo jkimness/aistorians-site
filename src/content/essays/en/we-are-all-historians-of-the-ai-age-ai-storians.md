@@ -33,6 +33,8 @@ The delivery man was unusual. A guy in a black leather jacket, carrying the box 
 
 Inside the box was the world’s first AI supercomputer, the DGX-1. Huang took a marker and wrote on it:
 
+![Jensen Huang and Elon Musk](./images/we-are-all-historians-of-the-ai-age-ai-storians/01_dgx1_jensen_elon.webp)
+
   
 
 *Jensen Huang presenting DGX-1 to Elon Musk*

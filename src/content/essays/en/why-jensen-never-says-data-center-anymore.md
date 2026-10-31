@@ -30,6 +30,8 @@ A few years ago at GTC, Jensen introduced a new word. AI factory.
 
 It’s what he calls a data center. It was his “I’m the captain now” moment.
 
+![“I’m the captain now” scene illustrating Jensen Huang’s change in terminology.](./images/why-jensen-never-says-data-center-anymore/01_jensen_captain.webp)
+
 Most people shrugged and moved on. I didn’t.
 
 Because in my experience, when a powerful person renames something, there is always a bigger picture behind it. Political campaigns are won and lost on a single *word*. PR teams agonize over one noun for weeks. **A new word is never just a word.**
@@ -39,6 +41,8 @@ Here’s another example of how much a *word* can carry in the tech *world*.
 Let’s go back to 2024. Apple refused to say “AI” on stage. This was at the peak of the mania, when every company stuffed “AI” “artificial intelligence” into every press release and product launch, when there was literally a drinking game: take a shot every time a big-tech keynote says “AI.” You’d be on the floor in ten minutes.
 
 Apple never said it. Not once. Instead, Tim Cook’s company coined its own phrase: **Apple Intelligence.**
+
+![Apple Intelligence presentation slide.](./images/why-jensen-never-says-data-center-anymore/02_apple_intelligence.webp)
 
 (Genius. It’s infuriating how good they are at this.)
 
@@ -95,6 +99,8 @@ Is an AI factory, a factory that *manufactures*? Arguably. It certainly *produce
 And here’s the decisive part: *the AI factory is the only factory America could actually win.*
 
 Why? There’s no labor bill. The reason traditional manufacturing left America was expensive workers, or rather, everyone else’s cheap ones. In this factory, that variable simply doesn’t exist. The cost lines are capital, chips, power, and land. Every one of them is a game America can win.
+
+![AI factory illustration from the original article.](./images/why-jensen-never-says-data-center-anymore/03_ai_factory.webp)
 
 So Jensen’s word hands Trump a gift: the right to declare “Made in USA is back” without needing the workers.
 

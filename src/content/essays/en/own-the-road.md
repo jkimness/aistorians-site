@@ -149,6 +149,8 @@ What gets common: intelligence, information, features, content, code.
 
 What gets rare: the road that carries them. Relationships, lists, channels, distribution.
 
+![](./images/own-the-road/02_common_rare.webp)
+
 The age of the makers is ending.
 
 The age of the carriers is coming.
