@@ -10,6 +10,7 @@ export async function GET(context: APIContext) {
     description: COPY.ko.meta.writing.description,
     site: context.site!,
     items: list.map((e) => ({ title: plainTitle(e.data), description: e.data.deck, pubDate: e.data.date, link: essayPath('ko', slugOf(e)) })),
+    trailingSlash: false, // site uses no trailing slash; with it the item links 404
     customData: '<language>ko</language>',
   });
 }
