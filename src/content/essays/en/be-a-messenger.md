@@ -12,9 +12,9 @@ faq:
   - q: "Why are CEOs going on social media?"
     a: "As AI makes information abundant, a CEO’s name and face create trust and accountability around the message. Jensen Huang and Satya Nadella show how leaders become messengers when people need a human answer for the direction of technology."
   - q: "What can AI not replace?"
-    a: "AI cannot replace Human Capital: a human we can trust, who will answer for the outcome. It can generate content, but it cannot generate a lived reputation or accountability."
+    a: "AI cannot replace Human Capital: a human we can trust, who will answer for the outcome. Trust and accountability are the signature AI cannot generate. AI signs nothing."
   - q: "How do I start becoming a messenger?"
-    a: "Put your name and face behind what you know, publish consistently, and answer for the results. Start with one clear point of view and build a feedback loop with the people you serve."
+    a: "Deliver what you know with your name and face attached, and answer for the outcome. The essay’s own first step: start by reading (ai)storians."
   - q: "What is an AI user vs an AI consumer?"
     a: "AI users assign jobs to models, control errors, and build feedback loops; AI consumers make small talk with chatbots. The user treats AI as a tool to direct and evaluate, not as an answer machine."
 ---
@@ -233,11 +233,11 @@ As AI makes information abundant, a CEO’s name and face create trust and accou
 
 ### What can AI not replace?
 
-AI cannot replace Human Capital: a human we can trust, who will answer for the outcome. It can generate content, but it cannot generate a lived reputation or accountability.
+AI cannot replace Human Capital: a human we can trust, who will answer for the outcome. Trust and accountability are the signature AI cannot generate. AI signs nothing.
 
 ### How do I start becoming a messenger?
 
-Put your name and face behind what you know, publish consistently, and answer for the results. Start with one clear point of view and build a feedback loop with the people you serve.
+Deliver what you know with your name and face attached, and answer for the outcome. The essay's own first step: start by reading (ai)storians.
 
 ### What is an AI user vs an AI consumer?
 
