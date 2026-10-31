@@ -1,6 +1,12 @@
 # BUILD_STATE.md
 
-마지막 갱신: 2026-10-28 (Cowork 세션, 영문판 배포)
+마지막 갱신: 2026-10-31 (Site Desk, RSS 링크 수정## 2026-10-31 Site Desk (Grok Bot)
+- Live check: all 20 sitemap pages return 200. aistorians.com sends you to www. rss.xml, sitemap-index.xml, robots.txt, canonical links and share images all return 200. No links to Squarespace are left on any page.
+- Fixed and deployed: the essay links in /rss.xml ended with a slash and gave 404. Now they have no slash and all return 200.
+- FAQ and definition draft: branch site-desk/faq-schema-2026-10-31 is pushed to GitHub but NOT merged. It adds a short definition and a few questions after five essays, plus FAQ data for search. The essay text does not change. It waits for your OK on the new copy and 5 lines of CSS.
+- Still open (no change): Web3Forms key, GitHub domain check TXT record, Search Console and Naver sitemap, Korean translation, missing images, Squarespace plan cancel (you do this one).
+
+)
 
 ## 2026-10-28 배포 (대표님: "이정도면 영문 홈페이지 바로 배포하자")
 - 영문 카피 OK 로 보고 copy.ts 영문 DRAFT 를 approved 2026-10-28 로 바꿨다. 한국어는 그대로 보류.
