@@ -14,6 +14,13 @@
 - Checks done: build passes, FAQ data matches the page on all five, every page, link and image works, no Squarespace links. Live: all five essays, home, rss.xml (all links 200), sitemap (20 pages), robots.txt return 200. Plain http also opens the site.
 - Still open (no change): Web3Forms key, Search Console and Naver sitemap, GitHub domain check TXT record, Korean translation (including the new labels Definition and Questions), missing images, Squarespace plan cancel (you do this one).
 
+## 2026-10-31 Site Desk, image rescue (Grok Bot)
+- Saved everything from the old Squarespace site before the plan is canceled: 66 files (essay images, thumbnails, the original About portrait, 2 favicons) and the page data. The list is at /workspace/aistorians-site/rescued-assets/MANIFEST.md on my computer, not in this repo.
+- Live now: 16 original images added back into their places (Be a Messenger 3, Create a Tradition 5, Own the Road 1, We Are All Historians 1, Why Jensen 3, Daily Thought 3). Essay text did not change.
+- Added a small page at /be-a-messenger that sends readers to /ai-storians/be-a-messenger (the old Squarespace address). It is not in the sitemap.
+- Covers and the About photo stay as they are, by your decision. The original About portrait was saved but is not used.
+- Still missing: Korean manuscript images (We Are All Historians 1, Be a Messenger 2, Create a Tradition 10). They were never on Squarespace, so they need Brunch or your Mac. The English image gap in the list below is now closed.
+
 ## 2026-10-28 배포 (대표님: "이정도면 영문 홈페이지 바로 배포하자")
 - 영문 카피 OK 로 보고 copy.ts 영문 DRAFT 를 approved 2026-10-28 로 바꿨다. 한국어는 그대로 보류.
 - 영문만 공개: `site.config.json` 의 koLive 가 false. /ko 페이지, 언어 토글, 한국어로 읽기 링크, hreflang ko, sitemap 의 /ko 가 모두 빠진다. 공개 페이지 20개.
