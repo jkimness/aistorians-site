@@ -115,7 +115,7 @@ export const COPY = {
       formatsTitle: 'Formats',
       formats: ['Keynote, 40 to 60 minutes', 'Workshop, 2 to 3 hours', 'Fireside chat, on stage with your host', 'In Korean or English'],
       bioTitle: 'Speaker bio',
-      bio: 'Jae Kim writes ai storians, weekly essays in English and Korean on what AI means for the people who don\'t build it. A former PR strategist at Edelman and communications strategist at Jackson Dawson, Jae spent a decade shaping stories for brands. Today Jae writes, speaks, and co-hosts FIRE사이드챗, a Korean tech news show.',
+      bio: 'Jae Kim writes ai storians, weekly essays in English and Korean on what AI means for the people who don\'t build it. A former PR strategist at Edelman, where Jae led communication strategy for luxury brands such as Chanel and Ananti, and a communications strategist at Jackson Dawson, Jae spent a decade shaping stories for brands. Today Jae is an AI strategy consultant, lecturer, and speaker on the future of AI and branding in the AI era, and co-hosts FIRE사이드챗, a Korean tech news show.',
       faqTitle: 'Questions',
       faq: [
         { q: 'Where do you speak?', a: 'In person in Korea and the US, or online.' },
@@ -151,7 +151,8 @@ export const COPY = {
       paras: [
         'Jae Kim writes about AI and investing, and about a harder question underneath both: not just how people survive the AI shift, but how they win it.',
         'Jae writes ai storians, weekly essays in English and Korean built on one idea: AI learned everything it knows from human records, so we are all historians of the AI era now.',
-        'Before writing full time, Jae spent a decade shaping stories for brands, as a PR strategist at Edelman and a communications strategist at Jackson Dawson.',
+        'Jae spent a decade shaping stories for brands. As a PR strategist at Edelman, Jae led communication strategy and PR for high-end luxury brands such as Chanel and Ananti, then went on to Jackson Dawson as a communications strategist.',
+        'Today Jae works as an AI strategy consultant, helping companies and brands find their footing in the AI era, and as a lecturer and speaker on the future of AI and what branding means when machines read everything.',
         'Jae also writes Morgan Letter, an investing letter in Korean, and co-hosts FIRE사이드챗, a Korean tech news show.',
       ],
       believeTitle: 'What I believe',
@@ -300,7 +301,7 @@ export const COPY = {
       formatsTitle: '형식',
       formats: ['키노트 40~60분', '워크숍 2~3시간', '대담형 파이어사이드', '한국어 또는 영어'],
       bioTitle: '연사 소개',
-      bio: '제이킴모건은 AI 를 만들지 않는 사람들에게 AI 가 무슨 뜻인지 쓰는 에세이 연재 ai storians 의 작가입니다. 에델만 PR 전략가, 잭슨 도슨 커뮤니케이션 전략가로 10년 동안 브랜드의 이야기를 만들었습니다. 지금은 글을 쓰고, 강연하고, 테크 뉴스 토크쇼 FIRE사이드챗을 함께 진행합니다.',
+      bio: '제이킴모건은 AI 를 만들지 않는 사람들에게 AI 가 무슨 뜻인지 쓰는 에세이 연재 ai storians 의 작가입니다. 에델만에서 샤넬, 아난티 같은 럭셔리 브랜드의 커뮤니케이션 전략과 PR 을 맡았고, 잭슨 도슨을 거치며 10년 동안 브랜드의 이야기를 만들었습니다. 지금은 AI 전략 컨설턴트이자 AI 의 미래와 AI 시대의 브랜딩을 이야기하는 강사, 연사로 일하며, 테크 뉴스 토크쇼 FIRE사이드챗을 함께 진행합니다.',
       faqTitle: '자주 묻는 것',
       faq: [
         { q: '어디서 하나요?', a: '한국과 미국 현장, 또는 온라인.' },
@@ -336,7 +337,8 @@ export const COPY = {
       paras: [
         '제이킴모건은 AI 와 투자에 대해 씁니다. 그리고 그 아래 더 어려운 질문을 붙잡습니다. 사람이 AI 전환을 버텨 내는가가 아니라, 어떻게 이기는가.',
         '한국어와 영어로 매주 연재하는 에세이 ai storians 의 작가입니다. 연재는 한 가지 생각에서 시작했습니다. AI 는 아는 모든 것을 사람의 기록에서 배웠다. 그러니 이제 우리 모두가 AI 시대의 역사학자다.',
-        '전업 작가가 되기 전, 에델만에서 PR 전략가로, 잭슨 도슨에서 커뮤니케이션 전략가로 10년 동안 브랜드의 이야기를 만들었습니다.',
+        '10년 동안 브랜드의 이야기를 만들었습니다. 에델만에서는 PR 전략가로 샤넬, 아난티 같은 하이엔드 럭셔리 브랜드의 커뮤니케이션 전략과 PR 을 이끌었고, 이후 잭슨 도슨에서 커뮤니케이션 전략가로 일했습니다.',
+        '지금은 AI 전략 컨설턴트로 기업과 브랜드가 AI 시대에 자리를 잡도록 돕고, 강사이자 연사로서 AI 의 미래와 AI 시대의 브랜딩을 이야기합니다.',
         '한국어 투자 레터 모건 레터를 쓰고, 테크 뉴스 토크쇼 FIRE사이드챗을 함께 진행합니다.',
       ],
       believeTitle: 'AI 가 대체할 수 없는 것들',
